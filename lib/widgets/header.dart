@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:portfolio/provider/general_provider.dart';
+import 'package:portfolio/widgets/widgets.dart';
 import 'package:provider/provider.dart';
+
+import '../constants.dart';
+import '../provider/general_provider.dart';
 
 class Header extends StatefulWidget {
   const Header({Key? key}) : super(key: key);
@@ -17,7 +20,8 @@ class _HeaderState extends State<Header> {
 
   @override
   void initState() {
-    _scrollViewController = Provider.of<GeneralProvider>(context, listen: false).scrollViewController;
+    _scrollViewController = Provider.of<GeneralProvider>(context, listen: false)
+        .scrollViewController;
     _scrollViewController.addListener(() {
       if (_scrollViewController.position.userScrollDirection ==
           ScrollDirection.reverse) {
@@ -50,13 +54,30 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      height: _showAppbar ? 56.0 : 0.0,
-      duration: Duration(milliseconds: 200),
-      child: AppBar(
-        title: Text('Scroll'),
-        actions: <Widget>[
-          //add buttons here
-        ],
+      height: _showAppbar ? 70 : 0.0,
+      duration: headerDuration,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: defaultPadding,
+          vertical: defaultPadding /2,
+        ),
+        child: Row(
+          children: [
+            Text("Akshay"),
+            const Spacer(),
+            ...headerLinks
+                .map(
+                  (headerLink) => HeaderLink(
+                    headerLink: headerLink,
+                  ),
+                )
+                .toList(),
+            AnimatedButton(
+              text: "Resume",
+              onTap: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
