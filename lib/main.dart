@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/screens/screens.dart';
 
 import 'constants.dart';
 import 'screens/splash_screen.dart';
@@ -29,14 +30,14 @@ void main() {
             fontWeight: FontWeight.bold,
             fontSize: 32.00,
           ),
-          
+
           // Style used for company name
           headline6: GoogleFonts.inter().copyWith(
             color: headingTextColor,
             fontWeight: FontWeight.bold,
             fontSize: 22.00,
           ),
-          
+
           // Style used for name
           headline1: GoogleFonts.inter().copyWith(
             color: headingTextColor,
@@ -53,6 +54,9 @@ void main() {
         ),
       ),
       home: const SplashScreen(),
+      routes: {
+        LandingScreen.routeName: (context) => const LandingScreen(),
+      },
     ),
   );
 }

@@ -20,7 +20,10 @@ const Color highlightedButtonColor = Color.fromRGBO(100, 255, 218, 0.1);
 
 // Animation
 const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
+
 const Duration buttonHighlightDuration = Duration(milliseconds: 200);
+
+const Duration loadingScreenDuration = Duration(seconds: 8);
 
 
 // Sizing 
