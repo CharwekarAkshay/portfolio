@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
-import './landing_Screen.dart';
+import './screens.dart';
 import '../constants.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,17 +14,24 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
-     _startTime();
+    _startTime();
     super.initState();
   }
-  
+
   _startTime() async {
-    return Timer(loadingScreenDuration, () {
-      Navigator.pushNamedAndRemoveUntil(context, LandingScreen.routeName, (route) => false);
-    });
+    return Timer(
+      loadingScreenDuration,
+      () {
+        Navigator.pushAndRemoveUntil<void>(
+          context,
+          MaterialPageRoute<void>(
+              builder: (BuildContext context) => const LandingScreen()),
+          ModalRoute.withName('/'),
+        );
+      },
+    );
   }
 
   @override
@@ -37,7 +44,8 @@ class _SplashScreenState extends State<SplashScreen> {
             text: 'Akshay\nCharwekar',
             waveColor: themeColor,
             boxBackgroundColor: scaffoldColor,
-            textStyle: Theme.of(context).textTheme.headline1 ?? const TextStyle(),
+            textStyle:
+                Theme.of(context).textTheme.headline1 ?? const TextStyle(),
             boxWidth: double.infinity,
             boxHeight: 400,
             loadDuration: loadingScreenDuration,

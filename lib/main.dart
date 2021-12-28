@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/screens/screens.dart';
 
 import 'constants.dart';
-import 'screens/splash_screen.dart';
+import 'screens/screens.dart';
 
 void main() {
   runApp(
