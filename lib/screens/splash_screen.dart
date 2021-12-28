@@ -15,27 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           children: [
-            // Text(
-            //   "Hello World",
-            // ),
-            // Text(
-            //   "Hi world",
-            //   style: Theme.of(context).textTheme.bodyText1,
-            // ),
-            // Text(
-            //   "Headline 4",
-            //   style: Theme.of(context).textTheme.headline5,
-            // ),
-            // Text(
-            //   "Akshay Charwekar",
-            //   style: Theme.of(context).textTheme.headline1,
-            // ),
-            // Text(
-            //   "Akshay Charwekar",
-            //   style: Theme.of(context).textTheme.headline2,
-            // ),
-            AnimatedLink(text: "Sample text", onTap: () {},),
-            AnimatedButton(),
+            
           ],
         ),
       ),
