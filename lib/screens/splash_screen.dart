@@ -24,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Timer(
       loadingScreenDuration,
       () {
+        Navigator.popUntil(context, (route) => false);
         Navigator.pushAndRemoveUntil<void>(
           context,
           MaterialPageRoute<void>(

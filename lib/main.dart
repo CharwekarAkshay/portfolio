@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/provider/general_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'constants.dart';
 import 'screens/screens.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => GeneralProvider()),
+      ],
+      child: const App(),
+    ),
+  );
+}
+
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Akshay Charwekar",
       theme: ThemeData(
@@ -54,8 +70,8 @@ void main() {
       ),
       home: const SplashScreen(),
       routes: {
-        LandingScreen.routeName: (context) => const LandingScreen(),
+        LandingScreen.routeName: (context) =>  const LandingScreen(),
       },
-    ),
-  );
+    );
+  }
 }
