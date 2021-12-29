@@ -60,15 +60,15 @@ List<SocialIconLinkModel> socialLinks = [
   ),
   SocialIconLinkModel(
     svgPath: "assets/svg/instagram.svg",
-    onClickUrl: "https://instagram.com",
+    onClickUrl: "https://www.instagram.com/akshaycharwekar/",
   ),
   SocialIconLinkModel(
     svgPath: "assets/svg/leetcode.svg",
-    onClickUrl: "https://leetcode.com",
+    onClickUrl: "https://leetcode.com/AkshayCharwekar/",
   ),
   SocialIconLinkModel(
     svgPath: "assets/svg/linkedin.svg",
-    onClickUrl: "https://linkedin.com",
+    onClickUrl: "https://www.linkedin.com/in/akshay-charwekar-67b698183/",
   ),
 ];
 

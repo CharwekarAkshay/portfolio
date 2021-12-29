@@ -29,7 +29,7 @@ class _SocialIconLinkState extends State<SocialIconLink> {
     if (!await launch(
       url,
       forceSafariVC: false,
-      forceWebView: false,
+      forceWebView: true,
       headers: <String, String>{'my_header_key': 'my_header_value'},
     )) {
       throw 'Could not launch $url';

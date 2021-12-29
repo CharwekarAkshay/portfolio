@@ -37,58 +37,60 @@ class EmailDialog extends StatelessWidget {
             constraints: BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width * 0.9,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Email To: $userFirstName $userLastName",
-                      style: Theme.of(context).textTheme.headline5,
-                    ),
-                    const SizedBox(
-                      height: defaultSizing,
-                    ),
-                    Column(
-                      children: [
-                        InputTextField(
-                          fieldName: "To",
-                          controller: _toInputCotnroller,
-                          enabled: false,
-                        ),
-                        const SizedBox(height: defaultSizing),
-                        InputTextField(
-                          fieldName: "Subject",
-                          controller: _subjectInputCotnroller,
-                        ),
-                        const SizedBox(height: defaultSizing),
-                        InputTextField(
-                          fieldName: "Body",
-                          controller: _bodyInputCotnroller,
-                          maxLines: 10,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: defaultSizing),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    AnimatedLink(
-                      text: "Cancel",
-                      onTap: () => _handleCancel(context),
-                    ),
-                    const SizedBox(width: defaultSizing),
-                    AnimatedButton(
-                      text: "Send",
-                      onTap: () => _handleSend(context),
-                    )
-                  ],
-                )
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Email To: $userFirstName $userLastName",
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      const SizedBox(
+                        height: defaultSizing,
+                      ),
+                      Column(
+                        children: [
+                          InputTextField(
+                            fieldName: "To",
+                            controller: _toInputCotnroller,
+                            enabled: false,
+                          ),
+                          const SizedBox(height: defaultSizing),
+                          InputTextField(
+                            fieldName: "Subject",
+                            controller: _subjectInputCotnroller,
+                          ),
+                          const SizedBox(height: defaultSizing),
+                          InputTextField(
+                            fieldName: "Body",
+                            controller: _bodyInputCotnroller,
+                            maxLines: 10,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: defaultSizing),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      AnimatedLink(
+                        text: "Cancel",
+                        onTap: () => _handleCancel(context),
+                      ),
+                      const SizedBox(width: defaultSizing),
+                      AnimatedButton(
+                        text: "Send",
+                        onTap: () => _handleSend(context),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
