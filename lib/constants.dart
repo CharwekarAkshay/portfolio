@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/provider/general_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import 'models/model.dart';
 
@@ -38,6 +41,8 @@ const Duration headerLinkDuration = Duration(milliseconds: 200);
 
 const Duration headerLogoDuration = Duration(milliseconds: 300);
 
+const Duration scrollInViewDuration = Duration(seconds: 1);
+
 // Sizing
 const double defaultPadding = 20.00;
 
@@ -47,10 +52,58 @@ const double defaultSizing = 20.00;
 
 // Application Constant
 List<HeaderLinkModel> headerLinks = [
-  HeaderLinkModel(text: "About", onTap: () {}, textKey: "01."),
-  HeaderLinkModel(text: "Experience", onTap: () {}, textKey: "02."),
-  HeaderLinkModel(text: "Work", onTap: () {}, textKey: "03."),
-  HeaderLinkModel(text: "Contact", onTap: () {}, textKey: "04.")
+  HeaderLinkModel(
+      text: "About",
+      onTap: (context) {
+        (Provider.of<GeneralProvider>(
+          context,
+          listen: false,
+        ).itemScrollController as ItemScrollController)
+            .scrollTo(
+          index: 0,
+          duration: scrollInViewDuration,
+        );
+      },
+      textKey: "01."),
+  HeaderLinkModel(
+      text: "Experience",
+      onTap: (context) {
+        (Provider.of<GeneralProvider>(
+          context,
+          listen: false,
+        ).itemScrollController as ItemScrollController)
+            .scrollTo(
+          index: 1,
+          duration: scrollInViewDuration,
+        );
+      },
+      textKey: "02."),
+  HeaderLinkModel(
+      text: "Work",
+      onTap: (context) {
+        (Provider.of<GeneralProvider>(
+          context,
+          listen: false,
+        ).itemScrollController as ItemScrollController)
+            .scrollTo(
+          index: 2,
+          duration: scrollInViewDuration,
+        );
+      },
+      textKey: "03."),
+  HeaderLinkModel(
+      text: "Contact",
+      onTap: (context) {
+        (Provider.of<GeneralProvider>(
+          context,
+          listen: false,
+        ).itemScrollController as ItemScrollController)
+            .scrollTo(
+          index: 3,
+          duration: scrollInViewDuration,
+        );
+      },
+      textKey: "04.")
 ];
 
 List<SocialIconLinkModel> socialLinks = [

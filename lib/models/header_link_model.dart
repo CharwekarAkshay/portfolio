@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+
 class HeaderLinkModel {
   final String textKey;
   final String text;
-  final Function()? onTap;
+  final Function(BuildContext context) onTap;
 
   HeaderLinkModel({
     this.textKey = '0.0',
