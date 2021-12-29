@@ -9,7 +9,7 @@ class LeftPane extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
+      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [

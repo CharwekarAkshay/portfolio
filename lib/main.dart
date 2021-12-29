@@ -66,11 +66,35 @@ class App extends StatelessWidget {
             fontWeight: FontWeight.w600,
             fontSize: 80.00,
           ),
+
+          subtitle1: GoogleFonts.inter().copyWith(
+            color: textColor,
+          ),
+          subtitle2: GoogleFonts.inter().copyWith(
+            color: textColor,
+          ),
+        ),
+        dialogTheme: DialogTheme(
+          backgroundColor: scaffoldColor,
+          titleTextStyle: Theme.of(context).textTheme.headline5,
+          contentTextStyle: Theme.of(context).textTheme.bodyText2,
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: const OutlineInputBorder(),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: textColor),
+          ),
+          disabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: textColor),
+          ),
+          hintStyle: GoogleFonts.inter().copyWith(
+            color: hintTextColor,
+          ),
         ),
       ),
       home: const SplashScreen(),
       routes: {
-        LandingScreen.routeName: (context) =>  const LandingScreen(),
+        LandingScreen.routeName: (context) => const LandingScreen(),
       },
     );
   }

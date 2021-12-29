@@ -12,6 +12,8 @@ const Color linkTextColor = Color.fromRGBO(100, 255, 218, 1);
 
 const Color textColor = Color.fromRGBO(136, 146, 176, 1);
 
+const Color hintTextColor = Color.fromRGBO(136, 146, 176, 0.4);
+
 const Color headingTextColor = Color.fromRGBO(136, 146, 176, 1);
 
 const Color quotedTextColor = Color.fromRGBO(136, 146, 176, 1);
