@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:portfolio/widgets/widgets.dart';
@@ -61,22 +62,24 @@ class _HeaderState extends State<Header> {
           horizontal: defaultPadding,
           vertical: defaultPadding / 2,
         ),
-        child: Row(
-          children: [
-            const AnimatedLogo(text: "Akshay"),
-            const Spacer(),
-            ...headerLinks
-                .map(
-                  (headerLink) => HeaderLink(
-                    headerLink: headerLink,
-                  ),
-                )
-                .toList(),
-            AnimatedButton(
-              text: "Resume",
-              onTap: () {},
-            ),
-          ],
+        child: FadeInDown(
+          child: Row(
+            children: [
+              const AnimatedLogo(text: "Akshay"),
+              const Spacer(),
+              ...headerLinks
+                  .map(
+                    (headerLink) => HeaderLink(
+                      headerLink: headerLink,
+                    ),
+                  )
+                  .toList(),
+              AnimatedButton(
+                text: "Resume",
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
