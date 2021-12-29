@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants.dart';
+
+import 'widgets.dart';
 
 class LeftPane extends StatelessWidget {
   const LeftPane({Key? key}) : super(key: key);
@@ -6,8 +9,20 @@ class LeftPane extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
       width: 100,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          ...socialLinks
+              .map(
+                (link) => SocialIconLink(
+                  link: link,
+                ),
+              )
+              .toList(),
+          const CustomVerticalDivider()
+        ],
+      ),
     );
   }
 }

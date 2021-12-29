@@ -20,6 +20,8 @@ const Color highlightedButtonColor = Color.fromRGBO(100, 255, 218, 0.1);
 
 const Color headerColor = Color.fromRGBO(10, 25, 47, 0.85);
 
+const Color dividerColor = Color.fromRGBO(168, 178, 209, 1);
+
 // Animation
 const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
 
@@ -36,7 +38,10 @@ const Duration headerLogoDuration = Duration(milliseconds: 300);
 
 // Sizing
 const double defaultPadding = 20.00;
+
 const double defaultBorderRadius = 5.00;
+
+const double defaultSizing = 20.00;
 
 // Application Constant
 List<HeaderLinkModel> headerLinks = [
@@ -46,6 +51,24 @@ List<HeaderLinkModel> headerLinks = [
   HeaderLinkModel(text: "Contact", onTap: () {}, textKey: "04.")
 ];
 
+List<SocialIconLinkModel> socialLinks = [
+  SocialIconLinkModel(
+    svgPath: "assets/svg/github.svg",
+    onClickUrl: "https://github.com/CharwekarAkshay",
+  ),
+  SocialIconLinkModel(
+    svgPath: "assets/svg/instagram.svg",
+    onClickUrl: "https://instagram.com",
+  ),
+  SocialIconLinkModel(
+    svgPath: "assets/svg/leetcode.svg",
+    onClickUrl: "https://leetcode.com",
+  ),
+  SocialIconLinkModel(
+    svgPath: "assets/svg/linkedin.svg",
+    onClickUrl: "https://linkedin.com",
+  ),
+];
 
 // User Constants
 
