@@ -45,3 +45,12 @@ List<HeaderLinkModel> headerLinks = [
   HeaderLinkModel(text: "Work", onTap: () {}, textKey: "03."),
   HeaderLinkModel(text: "Contact", onTap: () {}, textKey: "04.")
 ];
+
+
+// User Constants
+
+const String userFirstName = "Akshay";
+
+const String userLastName = "Charwekar";
+
+const String userEmail = "charwekar12@gmail.com";

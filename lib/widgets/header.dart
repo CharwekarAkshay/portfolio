@@ -65,7 +65,7 @@ class _HeaderState extends State<Header> {
         child: FadeInDown(
           child: Row(
             children: [
-              const AnimatedLogo(text: "Akshay"),
+              const AnimatedLogo(),
               const Spacer(),
               ...headerLinks
                   .map(

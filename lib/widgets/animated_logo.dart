@@ -7,7 +7,7 @@ class AnimatedLogo extends StatefulWidget {
   final String text;
   const AnimatedLogo({
     Key? key,
-    required this.text,
+    this.text = userFirstName,
   }) : super(key: key);
 
   @override
