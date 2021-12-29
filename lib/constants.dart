@@ -32,6 +32,8 @@ const Duration headerDuration = Duration(milliseconds: 200);
 
 const Duration headerLinkDuration = Duration(milliseconds: 200);
 
+const Duration headerLogoDuration = Duration(milliseconds: 300);
+
 // Sizing
 const double defaultPadding = 20.00;
 const double defaultBorderRadius = 5.00;

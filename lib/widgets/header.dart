@@ -59,11 +59,11 @@ class _HeaderState extends State<Header> {
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: defaultPadding,
-          vertical: defaultPadding /2,
+          vertical: defaultPadding / 2,
         ),
         child: Row(
           children: [
-            Text("Akshay"),
+            const AnimatedLogo(text: "Akshay"),
             const Spacer(),
             ...headerLinks
                 .map(
