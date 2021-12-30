@@ -44,6 +44,8 @@ const Duration headerLogoDuration = Duration(milliseconds: 300);
 
 const Duration scrollInViewDuration = Duration(seconds: 1);
 
+const Duration imagePostioningDuration = Duration(milliseconds: 300);
+
 // Animation Delay Duration
 const Duration headerAnimationDelayDuration = Duration(milliseconds: 100);
 
@@ -138,9 +140,16 @@ List<SocialIconLinkModel> socialLinks = [
 const List<Widget> contentList = [
   General(),
   About(),
+  Experience(),
 ];
 
-// User Constants
+List<SkillProgressModel> skillSetList = [
+  SkillProgressModel(skill: 'Angular', skillPercentage: 90.0),
+  SkillProgressModel(skill: 'Flutter', skillPercentage: 89.0),
+  SkillProgressModel(skill: 'Javascript', skillPercentage: 89.0),
+  SkillProgressModel(skill: 'Spring (Java)', skillPercentage: 89.0),
+  SkillProgressModel(skill: 'CSS', skillPercentage: 89.0),
+];
 
 const String userFirstName = 'Akshay';
 
@@ -151,5 +160,7 @@ const String userEmail = 'charwekar12@gmail.com';
 const information = {
   'quotedText': 'I build things for the web.',
   'aboutMe':
-      'I’m a software engineer specializing in building full stack application.\nCurrently I am Software Engineer @Finastra.'
+      'I’m a software engineer specializing in building full stack application.\nCurrently I am Software Engineer @Finastra.',
+  'aboutMeDetailed':
+      'Hello! My name is Akshay and I enjoy creating that live on internet.I started my  journey as developer in 2019. I started as Angular developer. \n \nToday I am working as full stack developer @Finastra. My main focus is to develop application which scales.Currently I am working on Angular as front-end and Java as backe-end technology.\n \nIn my free time I liked to make my hands dirty and explore new things in the technological market. I always put step forward to new technology currently I am learning flutter.',
 };
