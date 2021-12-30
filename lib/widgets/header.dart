@@ -57,7 +57,7 @@ class _HeaderState extends State<Header> {
                 children: [
                   const AnimatedLogo(),
                   const Spacer(),
-                  ...headerLinks
+                  ...links
                       .map(
                         (headerLink) => HeaderLink(
                           headerLink: headerLink,

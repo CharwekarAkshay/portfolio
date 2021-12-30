@@ -37,6 +37,13 @@ class App extends StatelessWidget {
           // Style applied directly in text widget
           bodyText2: GoogleFonts.inter().copyWith(
             color: textColor,
+            fontSize: 20.00,
+          ),
+
+          headline4: GoogleFonts.firaCode().copyWith(
+            color: linkTextColor,
+            fontWeight: FontWeight.bold,
+            fontSize: 32.00,
           ),
 
           // Style used for subheading

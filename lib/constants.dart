@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/provider/general_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import 'models/model.dart';
+import 'provider/general_provider.dart';
+import 'widgets/widgets.dart';
 
 // Colors
 
@@ -17,7 +18,7 @@ const Color textColor = Color.fromRGBO(136, 146, 176, 1);
 
 const Color hintTextColor = Color.fromRGBO(136, 146, 176, 0.4);
 
-const Color headingTextColor = Color.fromRGBO(136, 146, 176, 1);
+const Color headingTextColor = Color.fromRGBO(204, 214, 246, 1);
 
 const Color quotedTextColor = Color.fromRGBO(136, 146, 176, 1);
 
@@ -56,84 +57,99 @@ const double defaultBorderRadius = 5.00;
 const double defaultSizing = 20.00;
 
 // Application Constant
-List<HeaderLinkModel> headerLinks = [
-  HeaderLinkModel(
-      text: "About",
-      onTap: (context) {
-        (Provider.of<GeneralProvider>(
-          context,
-          listen: false,
-        ).itemScrollController as ItemScrollController)
-            .scrollTo(
-          index: 0,
-          duration: scrollInViewDuration,
-        );
-      },
-      textKey: "01."),
-  HeaderLinkModel(
-      text: "Experience",
-      onTap: (context) {
-        (Provider.of<GeneralProvider>(
-          context,
-          listen: false,
-        ).itemScrollController as ItemScrollController)
-            .scrollTo(
-          index: 1,
-          duration: scrollInViewDuration,
-        );
-      },
-      textKey: "02."),
-  HeaderLinkModel(
-      text: "Work",
-      onTap: (context) {
-        (Provider.of<GeneralProvider>(
-          context,
-          listen: false,
-        ).itemScrollController as ItemScrollController)
-            .scrollTo(
-          index: 2,
-          duration: scrollInViewDuration,
-        );
-      },
-      textKey: "03."),
-  HeaderLinkModel(
-      text: "Contact",
-      onTap: (context) {
-        (Provider.of<GeneralProvider>(
-          context,
-          listen: false,
-        ).itemScrollController as ItemScrollController)
-            .scrollTo(
-          index: 3,
-          duration: scrollInViewDuration,
-        );
-      },
-      textKey: "04.")
+List<LinkModel> links = [
+  LinkModel(
+    text: 'About',
+    onTap: (context) {
+      (Provider.of<GeneralProvider>(
+        context,
+        listen: false,
+      ).itemScrollController as ItemScrollController)
+          .scrollTo(
+        index: 1,
+        duration: scrollInViewDuration,
+      );
+    },
+    textKey: '01.',
+  ),
+  LinkModel(
+    text: 'Experience',
+    onTap: (context) {
+      (Provider.of<GeneralProvider>(
+        context,
+        listen: false,
+      ).itemScrollController as ItemScrollController)
+          .scrollTo(
+        index: 2,
+        duration: scrollInViewDuration,
+      );
+    },
+    textKey: '02.',
+  ),
+  LinkModel(
+    text: 'Work',
+    onTap: (context) {
+      (Provider.of<GeneralProvider>(
+        context,
+        listen: false,
+      ).itemScrollController as ItemScrollController)
+          .scrollTo(
+        index: 3,
+        duration: scrollInViewDuration,
+      );
+    },
+    textKey: '03.',
+  ),
+  LinkModel(
+    text: 'Contact',
+    onTap: (context) {
+      (Provider.of<GeneralProvider>(
+        context,
+        listen: false,
+      ).itemScrollController as ItemScrollController)
+          .scrollTo(
+        index: 4,
+        duration: scrollInViewDuration,
+      );
+    },
+    textKey: '04.',
+  )
 ];
 
 List<SocialIconLinkModel> socialLinks = [
   SocialIconLinkModel(
-    svgPath: "assets/svg/github.svg",
-    onClickUrl: "https://github.com/CharwekarAkshay",
+    svgPath: 'assets/svg/github.svg',
+    onClickUrl: 'https://github.com/CharwekarAkshay',
   ),
   SocialIconLinkModel(
-    svgPath: "assets/svg/instagram.svg",
-    onClickUrl: "https://www.instagram.com/akshaycharwekar/",
+    svgPath: 'assets/svg/instagram.svg',
+    onClickUrl: 'https://www.instagram.com/akshaycharwekar/',
   ),
   SocialIconLinkModel(
-    svgPath: "assets/svg/leetcode.svg",
-    onClickUrl: "https://leetcode.com/AkshayCharwekar/",
+    svgPath: 'assets/svg/leetcode.svg',
+    onClickUrl: 'https://leetcode.com/AkshayCharwekar/',
   ),
   SocialIconLinkModel(
-    svgPath: "assets/svg/linkedin.svg",
-    onClickUrl: "https://www.linkedin.com/in/akshay-charwekar-67b698183/",
+    svgPath: 'assets/svg/linkedin.svg',
+    onClickUrl: 'https://www.linkedin.com/in/akshay-charwekar-67b698183/',
   ),
+];
+
+const List<Widget> contentList = [
+  General(),
+  About(),
 ];
 
 // User Constants
 
-const String userFirstName = "Akshay";
+const String userFirstName = 'Akshay';
 
-const String userLastName = "Charwekar";
+const String userLastName = 'Charwekar';
 
-const String userEmail = "charwekar12@gmail.com";
+const String userEmail = 'charwekar12@gmail.com';
+
+const information = {
+  'quotedText': 'I build things for the web.',
+  'aboutMe':
+      'I’m a software engineer specializing in building full stack application.\nCurrently I am Software Engineer @Finastra.'
+};

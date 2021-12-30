@@ -8,7 +8,7 @@ import '../constants.dart';
 import '../models/model.dart';
 
 class HeaderLink extends StatefulWidget {
-  final HeaderLinkModel headerLink;
+  final LinkModel headerLink;
   const HeaderLink({
     Key? key,
     required this.headerLink,
