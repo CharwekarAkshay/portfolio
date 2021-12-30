@@ -43,6 +43,11 @@ const Duration headerLogoDuration = Duration(milliseconds: 300);
 
 const Duration scrollInViewDuration = Duration(seconds: 1);
 
+// Animation Delay Duration
+const Duration headerAnimationDelayDuration = Duration(milliseconds: 100);
+
+const Duration sidePaneAnimationDelayDuration = Duration(milliseconds: 500);
+
 // Sizing
 const double defaultPadding = 20.00;
 

@@ -52,6 +52,7 @@ class _HeaderState extends State<Header> {
               vertical: defaultPadding / 2,
             ),
             child: FadeInDown(
+              delay: headerAnimationDelayDuration,
               child: Row(
                 children: [
                   const AnimatedLogo(),

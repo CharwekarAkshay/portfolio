@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants.dart';
 
@@ -10,18 +11,21 @@ class LeftPane extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          ...socialLinks
-              .map(
-                (link) => SocialIconLink(
-                  link: link,
-                ),
-              )
-              .toList(),
-          const CustomVerticalDivider()
-        ],
+      child: FadeInUp(
+        delay: sidePaneAnimationDelayDuration,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            ...socialLinks
+                .map(
+                  (link) => SocialIconLink(
+                    link: link,
+                  ),
+                )
+                .toList(),
+            const CustomVerticalDivider()
+          ],
+        ),
       ),
     );
   }

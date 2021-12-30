@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/email_link.dart';
 
@@ -11,12 +12,15 @@ class RightPane extends StatelessWidget {
   Widget build(BuildContext context) {
      return Container(
       padding: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: const [
-          EmailLink(),
-          CustomVerticalDivider()
-        ],
+      child: FadeInUp(
+        delay: sidePaneAnimationDelayDuration,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: const [
+            EmailLink(),
+            CustomVerticalDivider()
+          ],
+        ),
       ),
     );
   }
