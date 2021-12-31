@@ -15,6 +15,7 @@ class Experience extends StatelessWidget {
       children: [
         ContentHeader(link: link),
         const SizedBox(height: defaultSizing),
+        const WorkExperience(),
       ],
     ));
   }

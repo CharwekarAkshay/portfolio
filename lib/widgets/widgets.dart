@@ -17,3 +17,4 @@ export 'right_pane.dart';
 export 'skill_set.dart';
 export 'social_icon_links.dart';
 export 'user_profile_image.dart';
+export 'work_experience.dart';
