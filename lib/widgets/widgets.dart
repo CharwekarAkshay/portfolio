@@ -7,6 +7,8 @@ export 'content_wrapper.dart';
 export 'custom_vertical_divider.dart';
 export 'email_dialog.dart';
 export 'experience.dart';
+export 'experience_detail.dart';
+export 'experience_detail_point.dart';
 export 'general.dart';
 export 'header.dart';
 export 'header_link.dart';

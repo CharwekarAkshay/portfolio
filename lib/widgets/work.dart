@@ -4,20 +4,17 @@ import '../constants.dart';
 import '../models/model.dart';
 import 'widgets.dart';
 
-class Experience extends StatelessWidget {
-  const Experience({Key? key}) : super(key: key);
+class Work extends StatelessWidget {
+  
+  const Work({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    LinkModel link = links[1];
+  LinkModel link = links[3];
     return ContentWrapper(
       child: Column(
         children: [
           ContentHeader(link: link),
-          const SizedBox(height: defaultSizing),
-          const WorkExperience(),
-          const SizedBox(height: defaultSizing),
-          const MoveNextButton(index: 3),
         ],
       ),
     );

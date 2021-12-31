@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/work.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -27,6 +28,8 @@ const Color highlightedButtonColor = Color.fromRGBO(100, 255, 218, 0.1);
 const Color headerColor = Color.fromRGBO(10, 25, 47, 0.85);
 
 const Color dividerColor = Color.fromRGBO(168, 178, 209, 1);
+
+const Color experienceTextColor = Color.fromRGBO(168, 178, 209, 1);
 
 // Animation
 const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
@@ -141,6 +144,7 @@ const List<Widget> contentList = [
   General(),
   About(),
   Experience(),
+  Work(),
 ];
 
 List<SkillProgressModel> skillSetList = [
@@ -164,3 +168,50 @@ const information = {
   'aboutMeDetailed':
       'Hello! My name is Akshay and I enjoy creating that live on internet.I started my  journey as developer in 2019. I started as Angular developer. \n \nToday I am working as full stack developer @Finastra. My main focus is to develop application which scales.Currently I am working on Angular as front-end and Java as backe-end technology.\n \nIn my free time I liked to make my hands dirty and explore new things in the technological market. I always put step forward to new technology currently I am learning flutter.',
 };
+
+List<ExperienceModel> workExp = [
+  ExperienceModel(
+    designation: 'Associate Software Engineer',
+    startDate: 'Feb 2021',
+    endDate: 'Present',
+    companyName: 'Finastra',
+    companyLink: 'https://www.finastra.com/',
+    workExperience: [
+      "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+       "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+       "Working on so and so thing",
+    ],
+  ),
+   ExperienceModel(
+    designation: 'Software Engineer',
+    startDate: 'July 2019',
+    endDate: 'Feb 2021',
+    companyName: 'Persistent Systems',
+    companyLink: 'https://www.persistent.com/',
+    workExperience: [
+      "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+    ],
+  ),
+   ExperienceModel(
+    designation: 'Intern',
+    startDate: 'Jan 2019',
+    endDate: 'July 2021',
+    companyName: 'Persistent Systems',
+    companyLink: 'https://www.persistent.com/',
+    workExperience: [
+      "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+      "Working on so and so thing",
+    ],
+  ),
+];

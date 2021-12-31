@@ -1,47 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/widgets.dart';
+import '../models/model.dart';
 
-class WorkExperience extends StatelessWidget {
+import '../constants.dart';
+
+class WorkExperience extends StatefulWidget {
   const WorkExperience({Key? key}) : super(key: key);
+
+  @override
+  State<WorkExperience> createState() => _WorkExperienceState();
+}
+
+class _WorkExperienceState extends State<WorkExperience> {
+  int _selectedIndex = 0;
+
+  _handleOnTap(int selectedIndex) {
+    setState(() {
+      _selectedIndex = selectedIndex;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
-      initialIndex: 0,
-      child: IntrinsicWidth(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            TabBar(
-              tabs: [
-                Tab(
-                  child: Text("Hello"),
-                ),
-                Tab(
-                  icon: Icon(
-                    Icons.directions_transit,
-                    color: Colors.grey,
+      length: workExp.length,
+      initialIndex: _selectedIndex,
+      child: Column(
+        children: [
+          TabBar(
+            onTap: _handleOnTap,
+            tabs: workExp
+                .map(
+                  (ExperienceModel experience) => Tab(
+                    text: experience.companyName,
                   ),
-                ),
-                Tab(
-                  icon: Icon(
-                    Icons.directions_bike,
-                    color: Colors.grey,
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  Icon(Icons.directions_car),
-                  Icon(Icons.directions_transit),
-                  Icon(Icons.directions_bike),
-                ],
-              ),
-            )
-          ],
-        ),
+                )
+                .toList(),
+          ),
+          ExperienceDetail(
+            experience: workExp[_selectedIndex],
+          ),
+        ],
       ),
     );
   }

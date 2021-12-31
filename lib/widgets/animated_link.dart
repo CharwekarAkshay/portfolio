@@ -5,11 +5,15 @@ import '../constants.dart';
 class AnimatedLink extends StatefulWidget {
   final String text;
   final Function()? onTap;
+  final TextStyle? style;
+  final bool disableHoverEffect;
 
   const AnimatedLink({
     Key? key,
     required this.text,
     this.onTap,
+    this.style,
+    this.disableHoverEffect = false,
   }) : super(key: key);
 
   @override
@@ -38,11 +42,11 @@ class _AnimatedLinkState extends State<AnimatedLink> {
       ),
       curve: Curves.easeIn,
       child: InkWell(
-        onHover: _handleHover,
+        onHover: widget.disableHoverEffect ? null : _handleHover,
         onTap: widget.onTap,
         child: Text(
           widget.text,
-          style: Theme.of(context).textTheme.bodyText1,
+          style: widget.style ?? Theme.of(context).textTheme.bodyText1,
         ),
       ),
     );
