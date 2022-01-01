@@ -1,17 +1,23 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class GeneralProvider with ChangeNotifier {
   late ScrollDirection? _scrollDirection;
   double _scrolledPixel = 0;
+  late double _screenSize; 
   late ItemScrollController _itemScrollController;
   late ItemPositionsListener _itemPositionsListener;
 
+  // Pixel Calculation
   GeneralProvider() {
     _scrollDirection = null;
     _itemScrollController = ItemScrollController();
     _itemPositionsListener = ItemPositionsListener.create();
+    _screenSize = MediaQueryData.fromWindow(WidgetsBinding.instance!.window).size.height;
+    print(_screenSize);
+
   }
 
   get itemScrollController {
@@ -24,6 +30,10 @@ class GeneralProvider with ChangeNotifier {
 
   get scrollDirection {
     return _scrollDirection;
+  }
+
+  get awayFromTop {
+   return _scrolledPixel > _screenSize;
   }
 
   setScrollDirection(ScrollNotification notification) {

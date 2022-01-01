@@ -16,7 +16,6 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> {
-  late ScrollController _scrollViewController;
   bool _showAppbar = true;
   bool _isScrollingDown = false;
 
@@ -65,7 +64,7 @@ class _HeaderState extends State<Header> {
                       )
                       .toList(),
                   AnimatedButton(
-                    text: "Resume",
+                    text: 'Resume',
                     onTap: () {},
                   ),
                 ],

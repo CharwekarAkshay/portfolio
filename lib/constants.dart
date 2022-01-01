@@ -36,8 +36,8 @@ const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
 
 const Duration buttonHighlightDuration = Duration(milliseconds: 200);
 
-// const Duration loadingScreenDuration = Duration(seconds: 8);
-const Duration loadingScreenDuration = Duration(seconds: 1);
+const Duration loadingScreenDuration = Duration(seconds: 8);
+// const Duration loadingScreenDuration = Duration(seconds: 1);
 
 const Duration headerDuration = Duration(milliseconds: 200);
 
@@ -53,6 +53,9 @@ const Duration imagePostioningDuration = Duration(milliseconds: 300);
 const Duration headerAnimationDelayDuration = Duration(milliseconds: 100);
 
 const Duration sidePaneAnimationDelayDuration = Duration(milliseconds: 500);
+
+const Duration contentAnimationDelayDuration = Duration(milliseconds: 1000);
+
 
 // Sizing
 const double defaultPadding = 20.00;

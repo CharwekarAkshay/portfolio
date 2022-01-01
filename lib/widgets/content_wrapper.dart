@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -12,16 +13,19 @@ class ContentWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        minHeight: MediaQuery.of(context).size.height,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: defaultPadding * 6,
-          horizontal: defaultPadding * 8,
+    return FadeInUpBig(
+      delay: contentAnimationDelayDuration,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height,
         ),
-        child: child,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: defaultPadding * 6,
+            horizontal: defaultPadding * 8,
+          ),
+          child: child,
+        ),
       ),
     );
   }
