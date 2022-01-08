@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class GeneralProvider with ChangeNotifier {
@@ -9,6 +8,7 @@ class GeneralProvider with ChangeNotifier {
   late double _screenSize; 
   late ItemScrollController _itemScrollController;
   late ItemPositionsListener _itemPositionsListener;
+  late final GlobalKey<ScaffoldState> _key;
 
   // Pixel Calculation
   GeneralProvider() {
@@ -16,8 +16,7 @@ class GeneralProvider with ChangeNotifier {
     _itemScrollController = ItemScrollController();
     _itemPositionsListener = ItemPositionsListener.create();
     _screenSize = MediaQueryData.fromWindow(WidgetsBinding.instance!.window).size.height;
-    print(_screenSize);
-
+    _key = GlobalKey();
   }
 
   get itemScrollController {
@@ -46,5 +45,9 @@ class GeneralProvider with ChangeNotifier {
       _scrolledPixel = notification.metrics.pixels;
       notifyListeners();
     }
+  }
+
+  get scaffoldKey {
+    return _key;
   }
 }

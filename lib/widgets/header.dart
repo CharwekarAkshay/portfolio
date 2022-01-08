@@ -21,7 +21,7 @@ class _HeaderState extends State<Header> {
 
   _handleScrollingDirection(ScrollDirection? direction) {
     if (direction != null) {
-      if (direction ==  ScrollDirection.reverse) {
+      if (direction == ScrollDirection.reverse) {
         if (!_isScrollingDown) {
           _isScrollingDown = true;
           _showAppbar = false;
@@ -39,6 +39,7 @@ class _HeaderState extends State<Header> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Consumer<GeneralProvider>(
       builder: (context, generalProvider, _) {
         _handleScrollingDirection(generalProvider.scrollDirection);
@@ -52,27 +53,73 @@ class _HeaderState extends State<Header> {
             ),
             child: FadeInDown(
               delay: headerAnimationDelayDuration,
-              child: Row(
-                children: [
-                  const AnimatedLogo(),
-                  const Spacer(),
-                  ...links
-                      .map(
-                        (headerLink) => HeaderLink(
-                          headerLink: headerLink,
-                        ),
-                      )
-                      .toList(),
-                  AnimatedButton(
-                    text: 'Resume',
-                    onTap: () {},
-                  ),
-                ],
-              ),
+              child: size.width > defaultWidthBreakPoint
+                  ? const FullScreenHeader()
+                  : const MobileHeader(),
             ),
           ),
         );
       },
+    );
+  }
+}
+
+class MobileHeader extends StatelessWidget {
+  const MobileHeader({
+    Key? key,
+  }) : super(key: key);
+
+  _handleMenuPress(BuildContext context) {
+    GlobalKey<ScaffoldState> scaffoldKey = Provider.of<GeneralProvider>(context, listen: false).scaffoldKey;
+    scaffoldKey.currentState!.openEndDrawer();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          userFirstName,
+          style: Theme.of(context).textTheme.headline6!.copyWith(
+                color: linkTextColor,
+              ),
+        ),
+        IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () => _handleMenuPress(context),
+          iconSize: 30,
+          color: themeColor,
+        )
+      ],
+    );
+  }
+}
+
+class FullScreenHeader extends StatelessWidget {
+  const FullScreenHeader({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const AnimatedLogo(),
+        const Spacer(),
+        ...links
+            .map(
+              (headerLink) => HeaderLink(
+                headerLink: headerLink,
+              ),
+            )
+            .toList(),
+        AnimatedButton(
+          text: 'Resume',
+          onTap: () {},
+        ),
+      ],
     );
   }
 }

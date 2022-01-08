@@ -5,6 +5,7 @@ export 'animated_logo.dart';
 export 'content_header.dart';
 export 'content_wrapper.dart';
 export 'custom_vertical_divider.dart';
+export 'drawer_menu.dart';
 export 'email_dialog.dart';
 export 'experience.dart';
 export 'experience_detail.dart';

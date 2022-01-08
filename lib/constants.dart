@@ -36,8 +36,8 @@ const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
 
 const Duration buttonHighlightDuration = Duration(milliseconds: 200);
 
-const Duration loadingScreenDuration = Duration(seconds: 8);
-// const Duration loadingScreenDuration = Duration(seconds: 1);
+// const Duration loadingScreenDuration = Duration(seconds: 8);
+const Duration loadingScreenDuration = Duration(seconds: 1);
 
 const Duration headerDuration = Duration(milliseconds: 200);
 
@@ -63,6 +63,8 @@ const double defaultPadding = 20.00;
 const double defaultBorderRadius = 5.00;
 
 const double defaultSizing = 20.00;
+
+const double defaultWidthBreakPoint = 768.00;
 
 // Application Constant
 List<LinkModel> links = [

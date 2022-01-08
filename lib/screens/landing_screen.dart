@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
@@ -15,7 +17,9 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var awayFromTop = Provider.of<GeneralProvider>(context).awayFromTop;
+    var scaffoldKey = Provider.of<GeneralProvider>(context, listen: false).scaffoldKey;
     return Scaffold(
+      key: scaffoldKey,
       body: Column(
         children: [
           const Header(),
@@ -55,6 +59,7 @@ class LandingScreen extends StatelessWidget {
             )
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      endDrawer: const DrawerMenu(),
     );
   }
 }
