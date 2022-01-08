@@ -10,18 +10,18 @@ class RightPane extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-      child: FadeInUp(
-        delay: sidePaneAnimationDelayDuration,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: const [
-            EmailLink(),
-            CustomVerticalDivider()
-          ],
-        ),
-      ),
-    );
+    var size = MediaQuery.of(context).size;
+    return size.width > defaultWidthBreakPoint
+        ? Container(
+            padding: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            child: FadeInUp(
+              delay: sidePaneAnimationDelayDuration,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [EmailLink(), CustomVerticalDivider()],
+              ),
+            ),
+          )
+        : const SizedBox.shrink();
   }
 }

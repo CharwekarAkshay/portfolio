@@ -9,24 +9,27 @@ class LeftPane extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-      child: FadeInUp(
-        delay: sidePaneAnimationDelayDuration,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            ...socialLinks
-                .map(
-                  (link) => SocialIconLink(
-                    link: link,
-                  ),
-                )
-                .toList(),
-            const CustomVerticalDivider()
-          ],
-        ),
-      ),
-    );
+    var size = MediaQuery.of(context).size;
+    return size.width > defaultWidthBreakPoint
+        ? Container(
+            padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+            child: FadeInUp(
+              delay: sidePaneAnimationDelayDuration,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ...socialLinks
+                      .map(
+                        (link) => SocialIconLink(
+                          link: link,
+                        ),
+                      )
+                      .toList(),
+                  const CustomVerticalDivider()
+                ],
+              ),
+            ),
+          )
+        : const SizedBox.shrink();
   }
 }
