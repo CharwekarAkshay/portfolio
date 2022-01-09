@@ -16,23 +16,31 @@ class ContentHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        AutoSizeText.rich(
-          TextSpan(
-            children: [
-              TextSpan(
-                text: link.textKey,
-                style: Theme.of(context).textTheme.headline4,
-              ),
-              const TextSpan(
-                text: ' ',
-              ),
-              TextSpan(
-                text: link.text,
-                style: Theme.of(context).textTheme.headline5,
-              )
-            ],
-          ),
+        AutoSizeText(
+          link.textKey,
+          style: Theme.of(context).textTheme.headline4,
         ),
+        AutoSizeText(
+          link.text,
+          style: Theme.of(context).textTheme.headline5,
+        ),
+        // AutoSizeText.rich(
+        //   TextSpan(
+        //     children: [
+        //       TextSpan(
+        //         text: link.textKey,
+        //         style: Theme.of(context).textTheme.headline4,
+        //       ),
+        //       const TextSpan(
+        //         text: ' ',
+        //       ),
+        //       TextSpan(
+        //         text: link.text,
+        //         style: Theme.of(context).textTheme.headline5,
+        //       )
+        //     ],
+        //   ),
+        // ),
         const SizedBox(width: defaultSizing),
         const Expanded(
           child: Divider(

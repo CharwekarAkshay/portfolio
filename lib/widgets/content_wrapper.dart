@@ -11,9 +11,29 @@ class ContentWrapper extends StatelessWidget {
     required this.child,
   }) : super(key: key);
 
+  EdgeInsetsGeometry _getContentPadding(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    if (size.width > smallDesktopScreenMin) {
+      return const EdgeInsets.symmetric(
+        vertical: defaultPadding * 6,
+        horizontal: defaultPadding * 8,
+      );
+    } else if (size.width < smallDesktopScreenMin &&
+        size.width > mobileScreenMax) {
+      return const EdgeInsets.symmetric(
+        vertical: defaultPadding * 2,
+        horizontal: defaultPadding * 4,
+      );
+    } else {
+      return const EdgeInsets.symmetric(
+        vertical: defaultPadding * 2,
+        horizontal: defaultPadding * 2,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return FadeInUpBig(
       delay: contentAnimationDelayDuration,
       child: ConstrainedBox(
@@ -21,15 +41,7 @@ class ContentWrapper extends StatelessWidget {
           minHeight: MediaQuery.of(context).size.height,
         ),
         child: Padding(
-          padding: size.width > smallDesktopScreenMin
-              ? const EdgeInsets.symmetric(
-                  vertical: defaultPadding * 6,
-                  horizontal: defaultPadding * 8,
-                )
-              : const EdgeInsets.symmetric(
-                 vertical: defaultPadding * 2,
-                  horizontal: defaultPadding * 4,
-              ),
+          padding: _getContentPadding(context),
           child: child,
         ),
       ),
