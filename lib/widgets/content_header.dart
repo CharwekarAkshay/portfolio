@@ -1,4 +1,4 @@
-
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -16,14 +16,22 @@ class ContentHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          link.textKey,
-          style: Theme.of(context).textTheme.headline4,
-        ),
-        const SizedBox(width: defaultSizing / 2),
-        Text(
-          link.text,
-          style: Theme.of(context).textTheme.headline5,
+        AutoSizeText.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: link.textKey,
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              const TextSpan(
+                text: ' ',
+              ),
+              TextSpan(
+                text: link.text,
+                style: Theme.of(context).textTheme.headline5,
+              )
+            ],
+          ),
         ),
         const SizedBox(width: defaultSizing),
         const Expanded(

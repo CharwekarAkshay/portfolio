@@ -64,7 +64,17 @@ const double defaultBorderRadius = 5.00;
 
 const double defaultSizing = 20.00;
 
-const double defaultWidthBreakPoint = 768.00;
+ 
+// Screen Breakpoints
+const double extraLargeScreenMin  = 1201.00;
+
+const double desktopScreenMin  = 1025.00;
+
+const double smallDesktopScreenMin  = 769.00;
+
+const double tabletScreenMin  = 481.00;
+
+const double mobileScreenMax  = 480.00;
 
 // Application Constant
 List<LinkModel> links = [

@@ -26,7 +26,7 @@ class _HeaderLinkState extends State<HeaderLink> {
 
   _handleOnTap(BuildContext context, Size size) {
     widget.headerLink.onTap(context);
-    if (size.width < defaultWidthBreakPoint) {
+    if (size.width < smallDesktopScreenMin) {
       Navigator.of(context).pop();
     }
   }
@@ -41,7 +41,7 @@ class _HeaderLinkState extends State<HeaderLink> {
         padding: const EdgeInsets.symmetric(
           horizontal: defaultPadding,
         ),
-        child: size.width > defaultWidthBreakPoint
+        child: size.width > smallDesktopScreenMin
             ? FullScreenHeaderLink(widget: widget, isHovered: _isHovered)
             : MobileHeaderLink(widget: widget, isHovered: _isHovered),
       ),

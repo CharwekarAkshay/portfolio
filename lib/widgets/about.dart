@@ -10,24 +10,37 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     LinkModel link = links[0];
+    var size = MediaQuery.of(context).size;
+
     return ContentWrapper(
       child: Column(
         children: [
           ContentHeader(link: link),
           const SizedBox(height: defaultSizing),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Text(
-                  '${information['aboutMeDetailed']}',
+          size.width > extraLargeScreenMin
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        '${information['aboutMeDetailed']}',
+                      ),
+                    ),
+                    const SizedBox(width: defaultSizing / 2),
+                    const UserProfileImage()
+                  ],
+                )
+              : Flex(
+                direction: Axis.vertical,
+                  children: [
+                    Text(
+                      '${information['aboutMeDetailed']}',
+                    ),
+                    const SizedBox(height: defaultSizing * 2), 
+                    const UserProfileImage()
+                  ],
                 ),
-              ),
-              const SizedBox(width: defaultSizing / 2),
-              const UserProfileImage()
-            ],
-          ),
           const SizedBox(height: defaultSizing * 2),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

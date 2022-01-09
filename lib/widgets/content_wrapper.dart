@@ -21,7 +21,7 @@ class ContentWrapper extends StatelessWidget {
           minHeight: MediaQuery.of(context).size.height,
         ),
         child: Padding(
-          padding: size.width > defaultWidthBreakPoint
+          padding: size.width > smallDesktopScreenMin
               ? const EdgeInsets.symmetric(
                   vertical: defaultPadding * 6,
                   horizontal: defaultPadding * 8,

@@ -10,7 +10,7 @@ class LeftPane extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return size.width > defaultWidthBreakPoint
+    return size.width > smallDesktopScreenMin
         ? Container(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: FadeInUp(

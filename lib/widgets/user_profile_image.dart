@@ -20,49 +20,91 @@ class _UserProfileImageState extends State<UserProfileImage> {
     });
   }
 
+  double _getImageBoxDimenstion(context) {
+    Size size = MediaQuery.of(context).size;
+    if (size.width >= extraLargeScreenMin) {
+      return 420.00;
+    } else if (size.width < extraLargeScreenMin &&
+        size.width < extraLargeScreenMin) {
+      return 320.00;
+    } else if (size.width <= mobileScreenMax) {
+      return 120.00;
+    }
+    return 0.00;
+  }
+
+  double _getImageDimenstion(context) {
+    Size size = MediaQuery.of(context).size;
+    if (size.width >= extraLargeScreenMin) {
+      return 400.00;
+    } else if (size.width < extraLargeScreenMin &&
+        size.width < extraLargeScreenMin) {
+      return 300.00;
+    } else if (size.width <= mobileScreenMax) {
+      return 100.00;
+    }
+    return 0.00;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      onHover: _handleHover,
-      child: Container(
-        height: 420,
-        width: 420,
-        child: Stack(
-          children: [
-            AnimatedPositioned(
-              duration: imagePostioningDuration,
-              left: _isHovered ? 0 : defaultSizing,
-              top: _isHovered ? 0 : defaultSizing,
-              child: Container(
-                height: 400,
-                width: 400,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(defaultBorderRadius),
-                  border: Border.all(
-                    color: themeColor,
-                    width: 2,
+    Size size = MediaQuery.of(context).size;
+    return size.width >= mobileScreenMax
+        ? InkWell(
+            onTap: () {},
+            onHover: _handleHover,
+            child: SizedBox(
+              height: _getImageBoxDimenstion(context),
+              width: _getImageBoxDimenstion(context),
+              child: Stack(
+                children: [
+                  AnimatedPositioned(
+                    duration: imagePostioningDuration,
+                    left: _isHovered ? 0 : defaultSizing,
+                    top: _isHovered ? 0 : defaultSizing,
+                    child: Container(
+                      height: _getImageDimenstion(context),
+                      width: _getImageDimenstion(context),
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(defaultBorderRadius),
+                        border: Border.all(
+                          color: themeColor,
+                          width: 2,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    height: _getImageDimenstion(context),
+                    width: _getImageDimenstion(context),
+                    padding: const EdgeInsets.all(defaultPadding / 2),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(defaultBorderRadius),
+                    ),
+                    child: Image.asset(
+                      'assets/images/background.jpg',
+                      fit: BoxFit.cover,
+                      colorBlendMode: _isHovered ? null : BlendMode.multiply,
+                      color: _isHovered ? null : themeColor.withOpacity(0.5),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Container(
-              height: 400,
-              width: 400,
-              padding: const EdgeInsets.all(defaultPadding / 2),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(defaultBorderRadius),
-              ),
-              child: Image.asset(
-                'assets/images/background.jpg',
-                fit: BoxFit.cover,
-                colorBlendMode: _isHovered ? null : BlendMode.multiply,
-                color: _isHovered ? null : themeColor.withOpacity(0.5),
+          )
+        : Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(defaultBorderRadius),
+              border: Border.all(
+                width: 2,
+                color: themeColor,
               ),
             ),
-          ],
-        ),
-      ),
-    );
+            child: Image.asset(
+              'assets/images/background.jpg',
+              fit: BoxFit.cover,
+            ),
+          );
   }
 }

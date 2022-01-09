@@ -54,7 +54,7 @@ class _HeaderState extends State<Header> {
             ),
             child: FadeInDown(
               delay: headerAnimationDelayDuration,
-              child: size.width > defaultWidthBreakPoint
+              child: size.width > smallDesktopScreenMin
                   ? const FullScreenHeader()
                   : MobileHeader(
                       showAppBar: _showAppbar,
