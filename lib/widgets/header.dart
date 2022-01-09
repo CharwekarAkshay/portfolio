@@ -47,6 +47,7 @@ class _HeaderState extends State<Header> {
           height: _showAppbar ? 70 : 0.0,
           duration: headerDuration,
           child: Container(
+            color: Colors.transparent,
             padding: const EdgeInsets.symmetric(
               horizontal: defaultPadding,
               vertical: defaultPadding / 2,
@@ -55,7 +56,9 @@ class _HeaderState extends State<Header> {
               delay: headerAnimationDelayDuration,
               child: size.width > defaultWidthBreakPoint
                   ? const FullScreenHeader()
-                  : const MobileHeader(),
+                  : MobileHeader(
+                      showAppBar: _showAppbar,
+                    ),
             ),
           ),
         );
@@ -67,10 +70,14 @@ class _HeaderState extends State<Header> {
 class MobileHeader extends StatelessWidget {
   const MobileHeader({
     Key? key,
+    required this.showAppBar,
   }) : super(key: key);
 
+  final bool showAppBar;
+
   _handleMenuPress(BuildContext context) {
-    GlobalKey<ScaffoldState> scaffoldKey = Provider.of<GeneralProvider>(context, listen: false).scaffoldKey;
+    GlobalKey<ScaffoldState> scaffoldKey =
+        Provider.of<GeneralProvider>(context, listen: false).scaffoldKey;
     scaffoldKey.currentState!.openEndDrawer();
   }
 
@@ -86,12 +93,13 @@ class MobileHeader extends StatelessWidget {
                 color: linkTextColor,
               ),
         ),
-        IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () => _handleMenuPress(context),
-          iconSize: 30,
-          color: themeColor,
-        )
+        if (showAppBar)
+          IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () => _handleMenuPress(context),
+            iconSize: 30,
+            color: themeColor,
+          )
       ],
     );
   }

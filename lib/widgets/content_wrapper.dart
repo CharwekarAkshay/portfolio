@@ -13,6 +13,7 @@ class ContentWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return FadeInUpBig(
       delay: contentAnimationDelayDuration,
       child: ConstrainedBox(
@@ -20,10 +21,15 @@ class ContentWrapper extends StatelessWidget {
           minHeight: MediaQuery.of(context).size.height,
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: defaultPadding * 6,
-            horizontal: defaultPadding * 8,
-          ),
+          padding: size.width > defaultWidthBreakPoint
+              ? const EdgeInsets.symmetric(
+                  vertical: defaultPadding * 6,
+                  horizontal: defaultPadding * 8,
+                )
+              : const EdgeInsets.symmetric(
+                 vertical: defaultPadding * 2,
+                  horizontal: defaultPadding * 4,
+              ),
           child: child,
         ),
       ),
