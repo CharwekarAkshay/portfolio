@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -23,7 +24,7 @@ class About extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: Text(
+                      child: AutoSizeText(
                         '${information['aboutMeDetailed']}',
                       ),
                     ),
@@ -34,7 +35,7 @@ class About extends StatelessWidget {
               : Flex(
                 direction: Axis.vertical,
                   children: [
-                    Text(
+                    AutoSizeText(
                       '${information['aboutMeDetailed']}',
                     ),
                     const SizedBox(height: defaultSizing * 2), 
@@ -45,7 +46,7 @@ class About extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              AutoSizeText(
                 'Here are a few technologies I’ve been working with recently:',
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       fontSize: 20,

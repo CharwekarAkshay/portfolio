@@ -1,4 +1,4 @@
-import 'package:animate_do/animate_do.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models/model.dart';
@@ -28,6 +28,8 @@ class ExperienceDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: defaultPadding / 2,
@@ -36,11 +38,18 @@ class ExperienceDetail extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          Flex(
+            direction: size.width > smallDesktopScreenMin
+                ? Axis.horizontal
+                : Axis.vertical,
+            crossAxisAlignment: size.width > smallDesktopScreenMin
+                ? CrossAxisAlignment.center
+                : CrossAxisAlignment.start,
             children: [
-              Text(experience.designation),
-              const SizedBox(width: defaultSizing / 2),
+              AutoSizeText(experience.designation),
+              size.width > smallDesktopScreenMin
+                  ? const SizedBox(width: defaultSizing / 2)
+                  : const SizedBox(height: defaultSizing / 2),
               AnimatedLink(
                 text: '@${experience.companyName}',
                 onTap: onCompanyNameClick,
@@ -52,7 +61,7 @@ class ExperienceDetail extends StatelessWidget {
             ],
           ),
           const SizedBox(height: defaultSizing / 4),
-          Text(
+          AutoSizeText(
             '${experience.startDate} - ${experience.endDate}',
             style: Theme.of(context)
                 .textTheme
