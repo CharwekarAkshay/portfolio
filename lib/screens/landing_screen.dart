@@ -17,7 +17,8 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var awayFromTop = Provider.of<GeneralProvider>(context).awayFromTop;
-    var scaffoldKey = Provider.of<GeneralProvider>(context, listen: false).scaffoldKey;
+    var scaffoldKey =
+        Provider.of<GeneralProvider>(context, listen: false).scaffoldKey;
     return Scaffold(
       key: scaffoldKey,
       body: Column(
@@ -40,8 +41,10 @@ class LandingScreen extends StatelessWidget {
       floatingActionButton: awayFromTop
           ? Container(
               margin: EdgeInsets.only(
-                  right: MediaQuery.of(context).size.width * 0.05),
+                right: MediaQuery.of(context).size.width * 0.05,
+              ),
               child: FloatingActionButton(
+                mini:  !(MediaQuery.of(context).size.width > smallDesktopScreenMin),
                 onPressed: () {
                   (Provider.of<GeneralProvider>(
                     context,
@@ -59,6 +62,7 @@ class LandingScreen extends StatelessWidget {
             )
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       endDrawer: const DrawerMenu(),
     );
   }
