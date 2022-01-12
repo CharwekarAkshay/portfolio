@@ -56,7 +56,6 @@ const Duration sidePaneAnimationDelayDuration = Duration(milliseconds: 500);
 
 const Duration contentAnimationDelayDuration = Duration(milliseconds: 1000);
 
-
 // Sizing
 const double defaultPadding = 20.00;
 
@@ -64,17 +63,16 @@ const double defaultBorderRadius = 5.00;
 
 const double defaultSizing = 20.00;
 
- 
 // Screen Breakpoints
-const double extraLargeScreenMin  = 1201.00;
+const double extraLargeScreenMin = 1201.00;
 
-const double desktopScreenMin  = 1025.00;
+const double desktopScreenMin = 1025.00;
 
-const double smallDesktopScreenMin  = 769.00;
+const double smallDesktopScreenMin = 769.00;
 
-const double tabletScreenMin  = 481.00;
+const double tabletScreenMin = 481.00;
 
-const double mobileScreenMax  = 480.00;
+const double mobileScreenMax = 480.00;
 
 // Application Constant
 List<LinkModel> links = [
@@ -192,41 +190,128 @@ List<ExperienceModel> workExp = [
     companyName: 'Finastra',
     companyLink: 'https://www.finastra.com/',
     workExperience: [
-      "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
-       "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
-       "Working on so and so thing",
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
     ],
   ),
-   ExperienceModel(
+  ExperienceModel(
     designation: 'Software Engineer',
     startDate: 'July 2019',
     endDate: 'Feb 2021',
     companyName: 'Persistent Systems',
     companyLink: 'https://www.persistent.com/',
     workExperience: [
-      "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
     ],
   ),
-   ExperienceModel(
+  ExperienceModel(
     designation: 'Intern',
     startDate: 'Jan 2019',
     endDate: 'July 2021',
     companyName: 'Persistent Systems',
     companyLink: 'https://www.persistent.com/',
     workExperience: [
-      "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
-      "Working on so and so thing",
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
+      'Working on so and so thing',
     ],
   ),
+];
+
+List<GitProjectModel> gitProjectList = [
+  GitProjectModel(
+    name: 'Time Machine',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 1',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 2',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 3',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 1',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 2',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 3',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 1',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 2',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  ),
+  GitProjectModel(
+    name: 'Time Machine - 3',
+    description:
+        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
+    gitLink: 'https://github.com/CharwekarAkshay',
+    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+  )
 ];
