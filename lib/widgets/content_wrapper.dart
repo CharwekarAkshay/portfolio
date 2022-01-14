@@ -34,16 +34,13 @@ class ContentWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInUpBig(
-      delay: contentAnimationDelayDuration,
-      child: ConstrainedBox(
-        constraints: BoxConstraints(
-          minHeight: MediaQuery.of(context).size.height,
-        ),
-        child: Padding(
-          padding: _getContentPadding(context),
-          child: child,
-        ),
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: MediaQuery.of(context).size.height,
+      ),
+      child: Padding(
+        padding: _getContentPadding(context),
+        child: child,
       ),
     );
   }
