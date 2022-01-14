@@ -69,20 +69,16 @@ class ExperienceDetail extends StatelessWidget {
                 .copyWith(color: experienceTextColor, fontSize: 13),
           ),
           const SizedBox(height: defaultSizing),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: MediaQuery.of(context).size.height * 0.5,
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: defaultPadding / 2,
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: defaultPadding / 2,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemBuilder: (context, index) => ExpeirenceDetailPoint(
+                text: experience.workExperience[index],
               ),
-              child: ListView.builder(
-                itemBuilder: (context, index) => ExpeirenceDetailPoint(
-                  text: experience.workExperience[index],
-                ),
-                itemCount: experience.workExperience.length,
-              ),
+              itemCount: experience.workExperience.length,
             ),
           )
         ],
