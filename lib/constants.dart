@@ -38,8 +38,8 @@ const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
 
 const Duration buttonHighlightDuration = Duration(milliseconds: 200);
 
-// const Duration loadingScreenDuration = Duration(seconds: 8);
-const Duration loadingScreenDuration = Duration(seconds: 1);
+const Duration loadingScreenDuration = Duration(seconds: 8);
+// const Duration loadingScreenDuration = Duration(seconds: 1);
 
 const Duration headerDuration = Duration(milliseconds: 200);
 
