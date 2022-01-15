@@ -19,22 +19,24 @@ class LandingScreen extends StatelessWidget {
         Provider.of<GeneralProvider>(context, listen: false).scaffoldKey;
     return Scaffold(
       key: scaffoldKey,
-      body: Column(
-        children: [
-          const Header(),
-          Expanded(
-            child: Flex(
-              direction: Axis.horizontal,
-              children: const [
-                LeftPane(),
-                Expanded(
-                  child: Content(),
-                ),
-                RightPane()
-              ],
-            ),
-          )
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Header(),
+            Expanded(
+              child: Flex(
+                direction: Axis.horizontal,
+                children: const [
+                  LeftPane(),
+                  Expanded(
+                    child: Content(),
+                  ),
+                  RightPane()
+                ],
+              ),
+            )
+          ],
+        ),
       ),
       floatingActionButton: awayFromTop
           ? Container(
