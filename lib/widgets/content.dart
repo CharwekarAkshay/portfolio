@@ -29,6 +29,5 @@ class Content extends StatelessWidget {
             Provider.of<GeneralProvider>(context).itemPositionsListener,
       ),
     );
-    ;
   }
 }

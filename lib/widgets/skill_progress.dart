@@ -40,8 +40,6 @@ class SkillProgress extends StatelessWidget {
 
   /// Returns the progress bar.
   Widget _buildProgressBar(BuildContext context, SkillProgressModel skillSet) {
-    final Brightness _brightness = Theme.of(context).brightness;
-
     return Center(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),

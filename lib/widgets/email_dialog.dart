@@ -17,9 +17,9 @@ class EmailDialog extends StatelessWidget {
 
   _handleSend(context) {
     var dialogData = {
-      "to": _toInputCotnroller.text,
-      "subject": _subjectInputCotnroller.text,
-      "body": _bodyInputCotnroller.text,
+      'to': _toInputCotnroller.text,
+      'subject': _subjectInputCotnroller.text,
+      'body': _bodyInputCotnroller.text,
     };
     Navigator.pop(context, dialogData);
   }
@@ -46,7 +46,7 @@ class EmailDialog extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Email To: $userFirstName $userLastName",
+                        'Email To: $userFirstName $userLastName',
                         style: Theme.of(context).textTheme.headline5,
                       ),
                       const SizedBox(
@@ -55,18 +55,18 @@ class EmailDialog extends StatelessWidget {
                       Column(
                         children: [
                           InputTextField(
-                            fieldName: "To",
+                            fieldName: 'To',
                             controller: _toInputCotnroller,
                             enabled: false,
                           ),
                           const SizedBox(height: defaultSizing),
                           InputTextField(
-                            fieldName: "Subject",
+                            fieldName: 'Subject',
                             controller: _subjectInputCotnroller,
                           ),
                           const SizedBox(height: defaultSizing),
                           InputTextField(
-                            fieldName: "Body",
+                            fieldName: 'Body',
                             controller: _bodyInputCotnroller,
                             maxLines: 10,
                           ),
@@ -79,12 +79,12 @@ class EmailDialog extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       AnimatedLink(
-                        text: "Cancel",
+                        text: 'Cancel',
                         onTap: () => _handleCancel(context),
                       ),
                       const SizedBox(width: defaultSizing),
                       AnimatedButton(
-                        text: "Send",
+                        text: 'Send',
                         onTap: () => _handleSend(context),
                       )
                     ],
