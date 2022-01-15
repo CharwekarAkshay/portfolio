@@ -1,3 +1,4 @@
+import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +19,16 @@ class WorkGridList extends StatelessWidget {
     }
   }
 
+  final options = const LiveOptions(
+    // Show each item through (default 250)
+    showItemInterval: gridShowItemInterval,
+
+    // Animation duration (default 250)
+    showItemDuration: gridShowItemDuration,
+  );
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
+    return LiveGrid.options(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -28,7 +36,9 @@ class WorkGridList extends StatelessWidget {
         crossAxisSpacing: defaultSizing,
         mainAxisSpacing: defaultSizing,
       ),
-      itemBuilder: (context, index) => GitProject(
+      options: options,
+      itemBuilder: (context, index, animation) => GitProject(
+        animation: animation,
         gitProject: gitProjectList[index],
       ),
       itemCount: gitProjectList.length,

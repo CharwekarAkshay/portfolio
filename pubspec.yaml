@@ -45,6 +45,7 @@ dependencies:
   scrollable_positioned_list: ^0.2.3
   syncfusion_flutter_gauges: ^19.4.40
   auto_size_text: ^3.0.0
+  auto_animated: ^3.0.1
   
 dev_dependencies:
   flutter_test:

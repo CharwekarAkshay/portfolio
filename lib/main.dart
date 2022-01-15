@@ -98,6 +98,14 @@ class App extends StatelessWidget {
             color: hintTextColor,
           ),
         ),
+        cardTheme: CardTheme(
+          color: cardColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              defaultBorderRadius,
+            ),
+          ),
+        ),
       ),
       home: const SplashScreen(),
       routes: {

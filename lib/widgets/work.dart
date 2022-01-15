@@ -13,9 +13,12 @@ class Work extends StatelessWidget {
     LinkModel link = links[2];
     return ContentWrapper(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ContentHeader(link: link),
+          const SizedBox(height: defaultSizing),
           const AutoSizeText('Somethings that I worked on'),
+          const SizedBox(height: defaultSizing),
           const WorkGridList()
         ],
       ),

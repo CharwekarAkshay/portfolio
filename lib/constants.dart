@@ -31,6 +31,8 @@ const Color dividerColor = Color.fromRGBO(168, 178, 209, 1);
 
 const Color experienceTextColor = Color.fromRGBO(168, 178, 209, 1);
 
+const Color cardColor = Color.fromRGBO(17, 34, 64, 1);
+
 // Animation
 const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
 
@@ -48,6 +50,12 @@ const Duration headerLogoDuration = Duration(milliseconds: 300);
 const Duration scrollInViewDuration = Duration(seconds: 1);
 
 const Duration imagePostioningDuration = Duration(milliseconds: 300);
+
+const Duration gridShowItemInterval = Duration(milliseconds: 200);
+
+const Duration gridShowItemDuration = Duration(milliseconds: 500);
+
+const Duration projectCardAnimationDuration = Duration(milliseconds: 500);
 
 // Animation Delay Duration
 const Duration headerAnimationDelayDuration = Duration(milliseconds: 100);
