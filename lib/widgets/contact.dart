@@ -62,7 +62,8 @@ class Contact extends StatelessWidget {
           const SizedBox(height: defaultSizing * 2),
           ConstrainedBox(
             constraints: BoxConstraints(
-                maxWidth: MediaQuery.of(context).size.width * 0.4),
+              maxWidth: _getMessageBoxWidth(context),
+            ),
             child: AutoSizeText(
               contactMessage,
               style: Theme.of(context).textTheme.bodyText2,
@@ -77,5 +78,23 @@ class Contact extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _getMessageBoxWidth(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+    if (screenWidth >= extraLargeScreenMin) {
+      return screenWidth * 0.4;
+    } else if (screenWidth < extraLargeScreenMin &&
+        screenWidth >= desktopScreenMin) {
+      return screenWidth * 0.5;
+    } else if (screenWidth < desktopScreenMin &&
+        screenWidth >= smallDesktopScreenMin) {
+      return screenWidth * 0.6;
+    } else if (screenWidth < smallDesktopScreenMin &&
+        screenWidth >= tabletScreenMin) {
+      return screenWidth * 0.7;
+    }else {
+      return screenWidth;
+    }
   }
 }

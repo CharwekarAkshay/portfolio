@@ -57,17 +57,21 @@ class EmailDialog extends StatelessWidget {
                           InputTextField(
                             fieldName: 'To',
                             controller: _toInputCotnroller,
+                            textInputAction: TextInputAction.next,
                             enabled: false,
                           ),
                           const SizedBox(height: defaultSizing),
                           InputTextField(
                             fieldName: 'Subject',
+                            textInputAction: TextInputAction.next,
                             controller: _subjectInputCotnroller,
                           ),
                           const SizedBox(height: defaultSizing),
                           InputTextField(
                             fieldName: 'Body',
                             controller: _bodyInputCotnroller,
+                            keyboardType: TextInputType.multiline,
+                            textInputAction: TextInputAction.newline,
                             maxLines: 10,
                           ),
                         ],

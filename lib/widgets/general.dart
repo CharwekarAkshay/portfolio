@@ -22,13 +22,13 @@ class General extends StatelessWidget {
           AutoSizeText(
             '$userFirstName $userLastName.',
             style: Theme.of(context).textTheme.headline1,
-            maxLines: 1,
+            maxLines: 2,
           ),
           const SizedBox(height: defaultSizing),
           AutoSizeText(
             '${information['quotedText']}',
             style: Theme.of(context).textTheme.headline2,
-            maxLines: 1,
+            maxLines: 2,
           ),
           const SizedBox(height: defaultSizing),
           AutoSizeText(

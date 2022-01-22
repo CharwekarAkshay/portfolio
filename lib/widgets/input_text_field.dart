@@ -7,12 +7,17 @@ class InputTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool enabled;
   final int maxLines;
+  final TextInputType keyboardType;
+  final TextInputAction? textInputAction;
+
   const InputTextField({
     Key? key,
     required this.fieldName,
     required this.controller,
+    required this.textInputAction,
     this.enabled = true,
     this.maxLines = 1,
+    this.keyboardType = TextInputType.text,
   }) : super(key: key);
 
   @override
@@ -33,6 +38,10 @@ class InputTextField extends StatelessWidget {
           enabled: enabled,
           controller: controller,
           maxLines: maxLines,
+          autofocus: false,
+          enableInteractiveSelection: true,
+          keyboardType: keyboardType,
+          textInputAction: textInputAction,
           decoration: InputDecoration(
             hintText: fieldName,
           ),
