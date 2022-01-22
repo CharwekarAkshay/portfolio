@@ -166,6 +166,7 @@ const List<Widget> contentList = [
   About(),
   Experience(),
   Work(),
+  Contact(),
 ];
 
 List<SkillProgressModel> skillSetList = [
@@ -189,6 +190,8 @@ const information = {
   'aboutMeDetailed':
       'Hello! My name is Akshay and I enjoy creating that live on internet.I started my  journey as developer in 2019. I started as Angular developer. \n \nToday I am working as full stack developer @Finastra. My main focus is to develop application which scales.Currently I am working on Angular as front-end and Java as backe-end technology.\n \nIn my free time I liked to make my hands dirty and explore new things in the technological market. I always put step forward to new technology currently I am learning flutter.',
 };
+
+const contactMessage = 'Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!';
 
 List<ExperienceModel> workExp = [
   ExperienceModel(

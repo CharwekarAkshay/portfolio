@@ -2,6 +2,7 @@ export 'about.dart';
 export 'animated_button.dart';
 export 'animated_link.dart';
 export 'animated_logo.dart';
+export 'contact.dart';
 export 'content_header.dart';
 export 'content_wrapper.dart';
 export 'custom_vertical_divider.dart';

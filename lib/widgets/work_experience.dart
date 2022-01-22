@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/widgets.dart';
 import '../models/model.dart';
@@ -32,7 +33,7 @@ class _WorkExperienceState extends State<WorkExperience> {
             tabs: workExp
                 .map(
                   (ExperienceModel experience) => Tab(
-                    text: experience.companyName,
+                    child: AutoSizeText(experience.companyName),
                   ),
                 )
                 .toList(),
