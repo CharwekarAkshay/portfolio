@@ -71,19 +71,18 @@ class ExperienceDetail extends StatelessWidget {
           const SizedBox(height: defaultSizing),
           ConstrainedBox(
             constraints: BoxConstraints(
-              minHeight: size.height * 0.5
+              minHeight: size.height * 0.5,
+              maxHeight: size.height * 0.5
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: defaultPadding / 2,
-              ),
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemBuilder: (context, index) => ExpeirenceDetailPoint(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.only(bottom: defaultPadding / 4),
+                child: ExpeirenceDetailPoint(
                   text: experience.workExperience[index],
                 ),
-                itemCount: experience.workExperience.length,
               ),
+              itemCount: experience.workExperience.length,
             ),
           )
         ],

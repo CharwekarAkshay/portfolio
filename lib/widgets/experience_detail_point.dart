@@ -13,7 +13,23 @@ class ExpeirenceDetailPoint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AutoSizeText.rich(
+      TextSpan(
+        children: [
+          TextSpan(
+            text: '> ',
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          TextSpan(
+            text: text,
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+        ]
+      )
+    );
+
+    /*
+      return Container(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding / 5),
       child: Row(
         children: [
@@ -26,5 +42,6 @@ class ExpeirenceDetailPoint extends StatelessWidget {
         ],
       ),
     );
+     */
   }
 }
