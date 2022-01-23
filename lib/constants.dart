@@ -326,3 +326,7 @@ List<GitProjectModel> gitProjectList = [
     technologies: ['Dart', 'Angular', 'Flutter', 'React'],
   )
 ];
+
+
+// Files constants 
+const String prfoilePictureFileName = 'profile_picture.jpg';

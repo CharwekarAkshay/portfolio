@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -13,6 +16,13 @@ class UserProfileImage extends StatefulWidget {
 
 class _UserProfileImageState extends State<UserProfileImage> {
   bool _isHovered = false;
+  Uint8List? imageData;
+
+  @override
+  void initState() {
+    _fetchProfileImageUrl();
+    super.initState();
+  }
 
   void _handleHover(value) {
     setState(() {
@@ -44,6 +54,16 @@ class _UserProfileImageState extends State<UserProfileImage> {
       return 100.00;
     }
     return 0.00;
+  }
+
+  _fetchProfileImageUrl() async {
+    Reference imageRefrence =
+        FirebaseStorage.instance.ref(prfoilePictureFileName);
+    imageRefrence.getData().then((incomingImageData) {
+      setState(() {
+        imageData = incomingImageData;
+      });
+    });
   }
 
   @override
@@ -82,8 +102,8 @@ class _UserProfileImageState extends State<UserProfileImage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(defaultBorderRadius),
                     ),
-                    child: Image.asset(
-                      'assets/images/background.jpg',
+                    child: Image.memory(
+                      imageData!,
                       fit: BoxFit.cover,
                       colorBlendMode: _isHovered ? null : BlendMode.multiply,
                       color: _isHovered ? null : themeColor.withOpacity(0.5),
@@ -101,8 +121,8 @@ class _UserProfileImageState extends State<UserProfileImage> {
                 color: themeColor,
               ),
             ),
-            child: Image.asset(
-              'assets/images/background.jpg',
+            child: Image.memory(
+              imageData!,
               fit: BoxFit.cover,
             ),
           );
