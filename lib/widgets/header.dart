@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../constants.dart';
 import '../provider/general_provider.dart';
 import '../provider/provider.dart';
+import '../screens/screens.dart';
 import '../widgets/widgets.dart';
 
 class Header extends StatefulWidget {
@@ -125,7 +126,9 @@ class FullScreenHeader extends StatelessWidget {
             .toList(),
         AnimatedButton(
           text: 'Resume',
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(ResumeScreen.routeName);
+          },
         ),
       ],
     );

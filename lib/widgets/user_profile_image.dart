@@ -102,12 +102,16 @@ class _UserProfileImageState extends State<UserProfileImage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(defaultBorderRadius),
                     ),
-                    child: Image.memory(
-                      imageData!,
-                      fit: BoxFit.cover,
-                      colorBlendMode: _isHovered ? null : BlendMode.multiply,
-                      color: _isHovered ? null : themeColor.withOpacity(0.5),
-                    ),
+                    child: imageData != null
+                        ? Image.memory(
+                            imageData!,
+                            fit: BoxFit.cover,
+                            colorBlendMode:
+                                _isHovered ? null : BlendMode.multiply,
+                            color:
+                                _isHovered ? null : themeColor.withOpacity(0.5),
+                          )
+                        : const SizedBox.shrink(),
                   ),
                 ],
               ),
@@ -121,10 +125,12 @@ class _UserProfileImageState extends State<UserProfileImage> {
                 color: themeColor,
               ),
             ),
-            child: Image.memory(
-              imageData!,
-              fit: BoxFit.cover,
-            ),
+            child: imageData != null
+                ? Image.memory(
+                    imageData!,
+                    fit: BoxFit.cover,
+                  )
+                : const SizedBox.shrink(),
           );
   }
 }
