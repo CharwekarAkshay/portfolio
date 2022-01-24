@@ -331,3 +331,4 @@ List<GitProjectModel> gitProjectList = [
 // Files constants 
 const String prfoilePictureFileName = 'profile_picture.jpg';
 const String resumeFileName = 'Resume.pdf';
+const String resumeDownloadedName= 'Akshay\'s_Resume.pdf';

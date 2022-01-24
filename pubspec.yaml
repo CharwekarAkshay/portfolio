@@ -50,6 +50,9 @@ dependencies:
   firebase_storage: ^10.2.5
   syncfusion_flutter_pdfviewer: ^19.4.43-beta
   syncfusion_flutter_core: ^19.4.43+1
+  universal_html: ^2.0.8
+  flutter_downloader: ^1.7.1
+  dio: ^4.0.4
 
 dev_dependencies:
   flutter_test:

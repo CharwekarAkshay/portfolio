@@ -1,8 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dio/dio.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:universal_html/html.dart';
 
 import '../constants.dart';
 import 'screens.dart';
@@ -17,6 +20,7 @@ class ResumeScreen extends StatefulWidget {
 
 class _ResumeScreenState extends State<ResumeScreen> {
   final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
+  String _pdfFileUrl = '';
 
   _buildPdfViewer(String pdfUrl) {
     return SfPdfViewerTheme(
@@ -42,7 +46,16 @@ class _ResumeScreenState extends State<ResumeScreen> {
   }
 
   _handleDownload() {
-    
+    if (kIsWeb) {
+      FirebaseStorage.instance.ref(resumeFileName).getData().then(
+        (data) {
+          var url = Url.createObjectUrlFromBlob(Blob([data]));
+          AnchorElement(href: url)
+            ..setAttribute('download', resumeDownloadedName)
+            ..click();
+        }
+      );
+    } else {}
   }
 
   @override
@@ -89,6 +102,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
                 builder:
                     (BuildContext context, AsyncSnapshot<String> snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
+                    _pdfFileUrl = snapshot.data!;
                     return _buildPdfViewer(snapshot.data!);
                   } else {
                     return const SizedBox.shrink();
