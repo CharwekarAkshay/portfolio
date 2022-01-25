@@ -6,7 +6,10 @@ body, html {
   background-size: 100% 100%;
 }
 
-.center {
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -15,21 +18,36 @@ body, html {
   transform: translate(-50%, -50%);
 }
 
-.contain {
-  display:block;
-  width:100%; height:100%;
-  object-fit: contain;
+.loader {
+  border: 16px solid #0a192f;
+  border-radius: 50%;
+  border: 15px solid ;
+  border-top: 16px solid #009688;
+  border-right: 16px solid #0a192f;
+  border-bottom: 16px solid #009688;
+  border-left: 16px solid #0a192f;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
-.stretch {
-  display:block;
-  width:100%; height:100%;
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
-.cover {
-  display:block;
-  width:100%; height:100%;
-  object-fit: cover;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
