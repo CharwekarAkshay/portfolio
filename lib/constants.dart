@@ -38,8 +38,7 @@ const Duration linkTextHighlightDuration = Duration(milliseconds: 300);
 
 const Duration buttonHighlightDuration = Duration(milliseconds: 200);
 
-const Duration loadingScreenDuration = Duration(seconds: 8);
-// const Duration loadingScreenDuration = Duration(seconds: 1);
+const Duration loadingScreenDuration = Duration(seconds: 5);
 
 const Duration headerDuration = Duration(milliseconds: 200);
 
@@ -56,6 +55,8 @@ const Duration gridShowItemInterval = Duration(milliseconds: 200);
 const Duration gridShowItemDuration = Duration(milliseconds: 500);
 
 const Duration projectCardAnimationDuration = Duration(milliseconds: 500);
+
+const Duration contentLoadingDuration = Duration(seconds: 1);
 
 // Animation Delay Duration
 const Duration headerAnimationDelayDuration = Duration(milliseconds: 100);
@@ -191,7 +192,8 @@ const information = {
       'Hello! My name is Akshay and I enjoy creating that live on internet.I started my  journey as developer in 2019. I started as Angular developer. \n \nToday I am working as full stack developer @Finastra. My main focus is to develop application which scales.Currently I am working on Angular as front-end and Java as backe-end technology.\n \nIn my free time I liked to make my hands dirty and explore new things in the technological market. I always put step forward to new technology currently I am learning flutter.',
 };
 
-const contactMessage = 'Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!';
+const contactMessage =
+    'Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!';
 
 List<ExperienceModel> workExp = [
   ExperienceModel(
@@ -327,7 +329,6 @@ List<GitProjectModel> gitProjectList = [
   )
 ];
 
-
-// Files constants 
+// Files constants
 const String prfoilePictureFileName = 'profile_picture.jpg';
 const String resumeFileName = 'Resume.pdf';
