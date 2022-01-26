@@ -95,15 +95,15 @@ class _ResumeHeaderState extends State<ResumeHeader> {
       var pdfUrl =
           await FirebaseStorage.instance.ref(resumeFileName).getDownloadURL();
 
-      options = DownloaderUtils(
-        progressCallback: (current, total) {
-          final progress = (current / total) * 100;
-        },
-        file: File('$path/$resumeDownloadedName'),
-        progress: ProgressImplementation(),
-        onDone: _handleFileDownloadDone,
-      );
-      await Flowder.download(pdfUrl, options);
+      // options = DownloaderUtils(
+      //   progressCallback: (current, total) {
+      //     final progress = (current / total) * 100;
+      //   },
+      //   file: File('$path/$resumeDownloadedName'),
+      //   progress: ProgressImplementation(),
+      //   onDone: _handleFileDownloadDone,
+      // );
+      // await Flowder.download(pdfUrl, options);
     }
   }
 
