@@ -2,7 +2,7 @@
     package="com.example.portfolio">
    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
    <application
-        android:label="portfolio"
+        android:label="Akshay's Resume"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

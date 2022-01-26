@@ -22,8 +22,6 @@ class _ResumeHeaderState extends State<ResumeHeader> {
   late DownloaderUtils options;
   late DownloaderCore core;
   late String path;
-  var _isDownloadingDone = false;
-  var _isDowloading = false;
 
   final Permission _permission = Permission.storage;
   PermissionStatus _permissionStatus = PermissionStatus.denied;
@@ -55,7 +53,9 @@ class _ResumeHeaderState extends State<ResumeHeader> {
 
   void _listenForPermissionStatus() async {
     final status = await _permission.status;
-    setState(() => _permissionStatus = status);
+    setState(
+      () => _permissionStatus = status,
+    );
   }
 
   _handleBack(context) {
@@ -69,8 +69,6 @@ class _ResumeHeaderState extends State<ResumeHeader> {
   }
 
   _handleFileDownloadDone() {
-    _isDowloading = false;
-    _isDownloadingDone = true;
     Fluttertoast.showToast(
       msg: '$userFirstName\'s resume has been downloaded successfully',
       toastLength: Toast.LENGTH_SHORT,
@@ -83,7 +81,6 @@ class _ResumeHeaderState extends State<ResumeHeader> {
   }
 
   _handleDownload() async {
-    _isDowloading = true;
     if (kIsWeb) {
       FirebaseStorage.instance.ref(resumeFileName).getData().then((data) {
         var url = html.Url.createObjectUrlFromBlob(html.Blob([data]));
@@ -104,7 +101,6 @@ class _ResumeHeaderState extends State<ResumeHeader> {
         },
         file: File('$path/$resumeDownloadedName'),
         progress: ProgressImplementation(),
-        deleteOnCancel: true,
         onDone: _handleFileDownloadDone,
       );
       await Flowder.download(pdfUrl, options);
@@ -112,15 +108,7 @@ class _ResumeHeaderState extends State<ResumeHeader> {
   }
 
   _getDownloadingStateIcon() {
-    if (!_isDowloading && !_isDownloadingDone) {
-      return const Icon(Icons.file_download_outlined);
-    } else if (isDownloading) {
-      return const Icon(Icons.circle);
-    } else if (_isDownloadingDone) {
-      return const Icon(Icons.file_download_done);
-    } else {
-      return const Icon(Icons.file_download_outlined);
-    }
+    return const Icon(Icons.file_download_outlined);
   }
 
   @override
