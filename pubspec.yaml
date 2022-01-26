@@ -51,8 +51,10 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^19.4.43-beta
   syncfusion_flutter_core: ^19.4.43+1
   universal_html: ^2.0.8
-  flutter_downloader: ^1.7.1
-  dio: ^4.0.4
+  flowder: ^0.2.0
+  path_provider: ^2.0.8
+  universal_io: ^2.0.4
+  permission_handler: ^8.3.0
 
 dev_dependencies:
   flutter_test:

@@ -1,11 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dio/dio.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flowder/flowder.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-import 'package:universal_html/html.dart';
+import 'package:universal_html/html.dart' as html;
+import 'package:universal_io/io.dart';
 
 import '../constants.dart';
 import 'screens.dart';
@@ -21,6 +23,46 @@ class ResumeScreen extends StatefulWidget {
 class _ResumeScreenState extends State<ResumeScreen> {
   final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
   String _pdfFileUrl = '';
+
+  late DownloaderUtils options;
+  late DownloaderCore core;
+  late  String path;
+
+  final Permission _permission = Permission.storage;
+  PermissionStatus _permissionStatus = PermissionStatus.denied;
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+    _listenForPermissionStatus();
+  }
+
+  Future<void> _requestPermission(Permission permission) async {
+    final status = await permission.request();
+
+    setState(() {
+      print(status);
+      _permissionStatus = status;
+      print(_permissionStatus);
+    });
+  }
+
+  Future<void> initPlatformState() async {
+    _setPath();
+    if (!mounted) return;
+  }
+
+  void _setPath() async {
+    // Only works on Andriod. Not supporting  IOS
+    path = Directory('/storage/emulated/0/Download').path;
+    print(path);
+  }
+
+  void _listenForPermissionStatus() async {
+    final status = await _permission.status;
+    setState(() => _permissionStatus = status);
+  }
 
   _buildPdfViewer(String pdfUrl) {
     return SfPdfViewerTheme(
@@ -45,17 +87,31 @@ class _ResumeScreenState extends State<ResumeScreen> {
     );
   }
 
-  _handleDownload() {
+  _handleFileDownloadDone() {}
+
+  _handleDownload() async {
     if (kIsWeb) {
-      FirebaseStorage.instance.ref(resumeFileName).getData().then(
-        (data) {
-          var url = Url.createObjectUrlFromBlob(Blob([data]));
-          AnchorElement(href: url)
-            ..setAttribute('download', resumeDownloadedName)
-            ..click();
-        }
+      FirebaseStorage.instance.ref(resumeFileName).getData().then((data) {
+        var url = html.Url.createObjectUrlFromBlob(html.Blob([data]));
+        html.AnchorElement(href: url)
+          ..setAttribute('download', resumeDownloadedName)
+          ..click();
+      });
+    } else {
+      _requestPermission(Permission.storage);
+      _setPath();
+      options = DownloaderUtils(
+        progressCallback: (current, total) {
+          final progress = (current / total) * 100;
+          print('Downloading: $progress');
+        },
+        file: File('$path/$resumeDownloadedName'),
+        progress: ProgressImplementation(),
+        deleteOnCancel: true,
+        onDone: _handleFileDownloadDone,
       );
-    } else {}
+      await Flowder.download(_pdfFileUrl, options);
+    }
   }
 
   @override
