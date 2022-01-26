@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
+import '../screens/screens.dart';
 import 'widgets.dart';
 
 class DrawerMenu extends StatelessWidget {
@@ -52,7 +53,9 @@ class DrawerMenu extends StatelessWidget {
                         .toList(),
                     AnimatedButton(
                       text: 'Resume',
-                      onTap: () {},
+                      onTap: () {
+                         Navigator.of(context).pushNamed(ResumeScreen.routeName);
+                      },
                     ),
                   ],
                 ),

@@ -28,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushAndRemoveUntil<void>(
           context,
           MaterialPageRoute<void>(
-              builder: (BuildContext context) => const LandingScreen()),
+            builder: (BuildContext context) => const LandingScreen(),
+          ),
           ModalRoute.withName('/'),
         );
       },

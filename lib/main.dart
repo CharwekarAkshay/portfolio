@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/resume_screen.dart';
@@ -114,7 +115,7 @@ class App extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashScreen(),
+      home: kIsWeb ?  const LandingScreen() : const SplashScreen(),
       routes: {
         LandingScreen.routeName: (context) => const LandingScreen(),
         ResumeScreen.routeName: (context) => const ResumeScreen(),
