@@ -18,6 +18,7 @@ export 'header_link.dart';
 export 'input_text_field.dart';
 export 'left_pane.dart';
 export 'move_next_button.dart';
+export 'resume_header.dart';
 export 'right_pane.dart';
 export 'skill_set.dart';
 export 'social_icon_links.dart';
