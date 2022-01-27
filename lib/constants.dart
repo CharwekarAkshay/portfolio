@@ -187,7 +187,7 @@ const String userEmail = 'charwekar12@gmail.com';
 const information = {
   'quotedText': 'I build things for the web.',
   'aboutMe':
-      'I’m a software engineer specializing in building full stack application.\nCurrently I am Software Engineer @Finastra.',
+      'I’m a software engineer specializing in building full stack application. Currently I am Software Engineer @Finastra.',
   'aboutMeDetailed':
       'Hello! My name is Akshay and I enjoy creating that live on internet.I started my  journey as developer in 2019. I started as Angular developer. \n \nToday I am working as full stack developer @Finastra. My main focus is to develop application which scales.Currently I am working on Angular as front-end and Java as backe-end technology.\n \nIn my free time I liked to make my hands dirty and explore new things in the technological market. I always put step forward to new technology currently I am learning flutter.',
 };
@@ -332,4 +332,4 @@ List<GitProjectModel> gitProjectList = [
 // Files constants
 const String prfoilePictureFileName = 'profile_picture.jpg';
 const String resumeFileName = 'Resume.pdf';
-const String resumeDownloadedName= 'Akshay\'s_Resume.pdf';
+const String resumeDownloadedName = 'Akshay\'s_Resume.pdf';
