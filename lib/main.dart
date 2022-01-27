@@ -44,7 +44,7 @@ class App extends StatelessWidget {
           // Style applied directly in text widget
           bodyText2: GoogleFonts.inter().copyWith(
             color: textColor,
-            fontSize: 20.00,
+            fontSize: 18.00,
           ),
 
           headline4: GoogleFonts.firaCode().copyWith(
@@ -57,7 +57,7 @@ class App extends StatelessWidget {
           headline5: GoogleFonts.inter().copyWith(
             color: headingTextColor,
             fontWeight: FontWeight.bold,
-            fontSize: 32.00,
+            fontSize: 30.00,
           ),
 
           // Style used for company name
@@ -71,14 +71,14 @@ class App extends StatelessWidget {
           headline1: GoogleFonts.inter().copyWith(
             color: headingTextColor,
             fontWeight: FontWeight.w600,
-            fontSize: 80.00,
+            fontSize: 75.00,
           ),
 
           // Style used for quoted text
           headline2: GoogleFonts.inter().copyWith(
             color: quotedTextColor,
             fontWeight: FontWeight.w600,
-            fontSize: 80.00,
+            fontSize: 75.00,
           ),
 
           subtitle1: GoogleFonts.inter().copyWith(

@@ -55,6 +55,7 @@ class _AnimatedLogoState extends State<AnimatedLogo> {
                 )
               ],
               isRepeatingAnimation: true,
+              onTap: () => _scrollToTop(),
             )
           : AnimatedDefaultTextStyle(
               child: Text(

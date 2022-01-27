@@ -15,17 +15,17 @@ class ContentWrapper extends StatelessWidget {
 
   EdgeInsetsGeometry _getContentPadding(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    if (size.width > smallDesktopScreenMin) {
+    if (size.width >= smallDesktopScreenMin) {
       return isFixContent
           ? const EdgeInsets.only(
               top: defaultPadding * 6,
-              left: defaultPadding * 8,
-              right: defaultPadding * 8,
+              left: defaultPadding * 5,
+              right: defaultPadding * 5,
               bottom: defaultSizing * 2,
             )
           : const EdgeInsets.symmetric(
               vertical: defaultPadding * 6,
-              horizontal: defaultPadding * 8,
+              horizontal: defaultPadding * 5,
             );
     } else if (size.width < smallDesktopScreenMin &&
         size.width > mobileScreenMax) {

@@ -9,7 +9,7 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _fontSize = 12;
+    const double _fontSize = 12;
 
     Future<void> _launchWebsite(String url) async {
       if (!await launch(
@@ -26,13 +26,13 @@ class Footer extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             AutoSizeText(
               'This website is buit using ',
               maxLines: 2,
               maxFontSize: _fontSize,
             ),
-            const FlutterLogo(
+            FlutterLogo(
               style: FlutterLogoStyle.horizontal,
               size: 80.00,
             )
@@ -45,7 +45,7 @@ class Footer extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AutoSizeText(
+                const AutoSizeText(
                   'Designed By',
                   maxFontSize: _fontSize,
                 ),
@@ -61,7 +61,7 @@ class Footer extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AutoSizeText(
+                const AutoSizeText(
                   'Customized and Built by',
                   maxFontSize: _fontSize,
                 ),
