@@ -84,6 +84,9 @@ const double tabletScreenMin = 481.00;
 const double mobileScreenMax = 480.00;
 
 // Application Constant
+
+const defaultNoOfProjectDisplay = 5;
+
 List<LinkModel> links = [
   LinkModel(
     text: 'About',
