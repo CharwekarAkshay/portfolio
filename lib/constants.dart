@@ -84,6 +84,9 @@ const double tabletScreenMin = 481.00;
 const double mobileScreenMax = 480.00;
 
 // Application Constant
+
+const defaultNoOfProjectDisplay = 5;
+
 List<LinkModel> links = [
   LinkModel(
     text: 'About',
@@ -332,4 +335,11 @@ List<GitProjectModel> gitProjectList = [
 // Files constants
 const String prfoilePictureFileName = 'profile_picture.jpg';
 const String resumeFileName = 'Resume.pdf';
-const String resumeDownloadedName = 'Akshay\'s_Resume.pdf';
+const String resumeDownloadedName= 'Akshay\'s_Resume.pdf';
+
+const String designerName = 'Britanny Chiang';
+const String designerWebsiteUrl = 'https://brittanychiang.com/';
+
+const String developerName = 'Akshay Charwekar';
+const String developerWebsireUrl = 'https://charwekarakshay.github.io/';
+

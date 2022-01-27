@@ -1,7 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../constants.dart';
+import '../provider/general_provider.dart';
 
 class AnimatedLogo extends StatefulWidget {
   final String text;
@@ -23,10 +26,21 @@ class _AnimatedLogoState extends State<AnimatedLogo> {
     });
   }
 
+  _scrollToTop() {
+    (Provider.of<GeneralProvider>(
+      context,
+      listen: false,
+    ).itemScrollController as ItemScrollController)
+        .scrollTo(
+      index: 0,
+      duration: scrollInViewDuration,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => _scrollToTop(),
       onHover: _handleHover,
       child: _isHovered
           ? AnimatedTextKit(
@@ -41,6 +55,7 @@ class _AnimatedLogoState extends State<AnimatedLogo> {
                 )
               ],
               isRepeatingAnimation: true,
+              onTap: () => _scrollToTop(),
             )
           : AnimatedDefaultTextStyle(
               child: Text(

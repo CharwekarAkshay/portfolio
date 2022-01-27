@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -44,7 +45,7 @@ class _AnimatedLinkState extends State<AnimatedLink> {
       child: InkWell(
         onHover: widget.disableHoverEffect ? null : _handleHover,
         onTap: widget.onTap,
-        child: Text(
+        child: AutoSizeText(
           widget.text,
           style: widget.style ?? Theme.of(context).textTheme.bodyText1,
         ),

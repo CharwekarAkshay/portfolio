@@ -44,6 +44,7 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     LinkModel link = links[3];
     return ContentWrapper(
+      isFixContent: true,
       child: Column(
         children: [
           AutoSizeText(
@@ -68,6 +69,7 @@ class Contact extends StatelessWidget {
               contactMessage,
               style: Theme.of(context).textTheme.bodyText2,
               maxLines: 5,
+              textAlign: TextAlign.center,
             ),
           ),
           const SizedBox(height: defaultSizing * 2),
@@ -75,6 +77,8 @@ class Contact extends StatelessWidget {
             text: 'Say Hello!',
             onTap: () => _openEmailDialog(context),
           ),
+          const Spacer(),
+          Footer(),
         ],
       ),
     );

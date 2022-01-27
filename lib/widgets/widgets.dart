@@ -11,6 +11,7 @@ export 'email_dialog.dart';
 export 'experience.dart';
 export 'experience_detail.dart';
 export 'experience_detail_point.dart';
+export 'footer.dart';
 export 'general.dart';
 export 'git_project.dart';
 export 'header.dart';

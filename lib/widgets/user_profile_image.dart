@@ -25,9 +25,11 @@ class _UserProfileImageState extends State<UserProfileImage> {
   }
 
   void _handleHover(value) {
-    setState(() {
-      _isHovered = value;
-    });
+    if (mounted) {
+      setState(() {
+        _isHovered = value;
+      });
+    }
   }
 
   double _getImageBoxDimenstion(context) {
@@ -60,9 +62,11 @@ class _UserProfileImageState extends State<UserProfileImage> {
     Reference imageRefrence =
         FirebaseStorage.instance.ref(prfoilePictureFileName);
     imageRefrence.getData().then((incomingImageData) {
-      setState(() {
-        imageData = incomingImageData;
-      });
+      if (mounted) {
+        setState(() {
+          imageData = incomingImageData;
+        });
+      }
     });
   }
 

@@ -55,12 +55,30 @@ class DrawerMenu extends StatelessWidget {
                       AnimatedButton(
                         text: 'Resume',
                         onTap: () {
-                           Navigator.of(context).pushNamed(ResumeScreen.routeName);
+                          Navigator.of(context)
+                              .pushNamed(ResumeScreen.routeName);
                         },
                       ),
                     ],
                   ),
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ...socialLinks
+                      .map(
+                        (link) => Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: defaultPadding / 2,
+                          ),
+                          child: SocialIconLink(
+                            link: link,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ],
               )
             ],
           ),
