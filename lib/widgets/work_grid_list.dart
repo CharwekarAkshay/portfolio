@@ -34,9 +34,11 @@ class _WorkGridListState extends State<WorkGridList> {
   );
 
   _handleContentButton() {
-    setState(() {
-      _isShowingFullContent = !_isShowingFullContent;
-    });
+    if (mounted) {
+      setState(() {
+        _isShowingFullContent = !_isShowingFullContent;
+      });
+    }
   }
 
   @override

@@ -336,3 +336,10 @@ List<GitProjectModel> gitProjectList = [
 const String prfoilePictureFileName = 'profile_picture.jpg';
 const String resumeFileName = 'Resume.pdf';
 const String resumeDownloadedName= 'Akshay\'s_Resume.pdf';
+
+const String designerName = 'Britanny Chiang';
+const String designerWebsiteUrl = 'https://brittanychiang.com/';
+
+const String developerName = 'Akshay Charwekar';
+const String developerWebsireUrl = 'https://charwekarakshay.github.io/';
+
