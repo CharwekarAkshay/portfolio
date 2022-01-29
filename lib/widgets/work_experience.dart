@@ -21,6 +21,21 @@ class _WorkExperienceState extends State<WorkExperience> {
     });
   }
 
+  List<Widget> _getOtherWorkExperience() {
+    if (workExp[_selectedIndex].hasMultipleDesignation) {
+      return workExp[_selectedIndex]
+          .otherWorkExperience
+          .map(
+            (ExperienceModel exp) => ExperienceDetail(
+              experience: exp,
+            ),
+          )
+          .toList();
+    } else {
+      return List.empty();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -41,6 +56,7 @@ class _WorkExperienceState extends State<WorkExperience> {
           ExperienceDetail(
             experience: workExp[_selectedIndex],
           ),
+          ..._getOtherWorkExperience()
         ],
       ),
     );

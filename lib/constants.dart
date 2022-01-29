@@ -218,31 +218,33 @@ List<ExperienceModel> workExp = [
     ],
   ),
   ExperienceModel(
-    designation: 'Software Engineer',
-    startDate: 'July 2019',
-    endDate: 'Feb 2021',
-    companyName: 'Persistent Systems',
-    companyLink: 'https://www.persistent.com/',
-    workExperience: [
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-    ],
-  ),
-  ExperienceModel(
-    designation: 'Intern',
-    startDate: 'Jan 2019',
-    endDate: 'July 2021',
-    companyName: 'Persistent Systems',
-    companyLink: 'https://www.persistent.com/',
-    workExperience: [
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-    ],
-  ),
+      designation: 'Software Engineer',
+      startDate: 'July 2019',
+      endDate: 'Feb 2021',
+      companyName: 'Persistent Systems',
+      companyLink: 'https://www.persistent.com/',
+      workExperience: [
+        'Working on so and so thing',
+        'Working on so and so thing',
+        'Working on so and so thing',
+        'Working on so and so thing',
+      ],
+      hasMultipleDesignation: true,
+      otherWorkExperience: [
+        ExperienceModel(
+          designation: 'Intern',
+          startDate: 'Jan 2019',
+          endDate: 'July 2021',
+          companyName: 'Persistent Systems',
+          companyLink: 'https://www.persistent.com/',
+          workExperience: [
+            'Working on so and so thing',
+            'Working on so and so thing',
+            'Working on so and so thing',
+            'Working on so and so thing',
+          ],
+        ),
+      ]),
 ];
 
 List<GitProjectModel> gitProjectList = [
@@ -335,11 +337,10 @@ List<GitProjectModel> gitProjectList = [
 // Files constants
 const String prfoilePictureFileName = 'profile_picture.jpg';
 const String resumeFileName = 'Resume.pdf';
-const String resumeDownloadedName= 'Akshay\'s_Resume.pdf';
+const String resumeDownloadedName = 'Akshay\'s_Resume.pdf';
 
 const String designerName = 'Britanny Chiang';
 const String designerWebsiteUrl = 'https://brittanychiang.com/';
 
 const String developerName = 'Akshay Charwekar';
 const String developerWebsireUrl = 'https://charwekarakshay.github.io/';
-

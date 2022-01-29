@@ -71,9 +71,12 @@ class ExperienceDetail extends StatelessWidget {
           const SizedBox(height: defaultSizing),
           ConstrainedBox(
             constraints: BoxConstraints(
-              minHeight: size.height * 0.5,
-              maxHeight: size.height * 0.5
-            ),
+                minHeight: experience.hasMultipleDesignation
+                    ? double.infinity
+                    : size.height * 0.5,
+                maxHeight: experience.hasMultipleDesignation
+                    ? double.infinity
+                    : size.height * 0.5),
             child: ListView.builder(
               shrinkWrap: true,
               itemBuilder: (context, index) => Padding(
