@@ -60,6 +60,15 @@ class ExperienceDetail extends StatelessWidget {
               )
             ],
           ),
+          if (experience.clientName != '') ...[
+            const SizedBox(height: defaultSizing / 4),
+            AutoSizeText(
+              experience.clientName,
+              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                    fontSize: 14,
+                  ),
+            ),
+          ],
           const SizedBox(height: defaultSizing / 4),
           AutoSizeText(
             '${experience.startDate} - ${experience.endDate}',
@@ -69,25 +78,34 @@ class ExperienceDetail extends StatelessWidget {
                 .copyWith(color: experienceTextColor, fontSize: 13),
           ),
           const SizedBox(height: defaultSizing),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-                minHeight: experience.hasMultipleDesignation
-                    ? double.infinity
-                    : size.height * 0.5,
-                maxHeight: experience.hasMultipleDesignation
-                    ? double.infinity
-                    : size.height * 0.5),
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.only(bottom: defaultPadding / 4),
-                child: ExpeirenceDetailPoint(
-                  text: experience.workExperience[index],
-                ),
-              ),
-              itemCount: experience.workExperience.length,
-            ),
-          )
+          experience.hasMultipleDesignation
+              ? ListView.builder(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.only(bottom: defaultPadding / 4),
+                    child: ExpeirenceDetailPoint(
+                      text: experience.workExperience[index],
+                    ),
+                  ),
+                  itemCount: experience.workExperience.length,
+                )
+              : ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: size.height * 0.5,
+                    maxHeight: size.height * 0.5,
+                  ),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => Padding(
+                      padding:
+                          const EdgeInsets.only(bottom: defaultPadding / 4),
+                      child: ExpeirenceDetailPoint(
+                        text: experience.workExperience[index],
+                      ),
+                    ),
+                    itemCount: experience.workExperience.length,
+                  ),
+                )
         ],
       ),
     );

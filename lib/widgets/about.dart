@@ -47,7 +47,7 @@ class About extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AutoSizeText(
-                'Here are a few technologies I’ve been working with recently:',
+                'Here are a few technologies I’ve been working on recently:',
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       fontSize: 20,
                     ),

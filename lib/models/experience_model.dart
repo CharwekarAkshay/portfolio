@@ -5,6 +5,7 @@ class ExperienceModel {
   final String companyName;
   final String companyLink;
   final List<String> workExperience;
+  final String clientName;
 
   final bool hasMultipleDesignation;
   final List<ExperienceModel> otherWorkExperience;
@@ -18,5 +19,6 @@ class ExperienceModel {
     required this.workExperience,
     this.hasMultipleDesignation = false,
     this.otherWorkExperience = const [],
+    this.clientName = '',
   });
 }

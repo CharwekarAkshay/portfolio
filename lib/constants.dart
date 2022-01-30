@@ -175,10 +175,10 @@ const List<Widget> contentList = [
 
 List<SkillProgressModel> skillSetList = [
   SkillProgressModel(skill: 'Angular', skillPercentage: 90.0),
-  SkillProgressModel(skill: 'Flutter', skillPercentage: 89.0),
-  SkillProgressModel(skill: 'Javascript', skillPercentage: 89.0),
-  SkillProgressModel(skill: 'Spring (Java)', skillPercentage: 89.0),
-  SkillProgressModel(skill: 'CSS', skillPercentage: 89.0),
+  SkillProgressModel(skill: 'Flutter', skillPercentage: 80.0),
+  SkillProgressModel(skill: 'Javascript', skillPercentage: 80.0),
+  SkillProgressModel(skill: 'Spring (Java)', skillPercentage: 60.0),
+  SkillProgressModel(skill: 'CSS', skillPercentage: 75.0),
 ];
 
 const String userFirstName = 'Akshay';
@@ -190,9 +190,9 @@ const String userEmail = 'charwekar12@gmail.com';
 const information = {
   'quotedText': 'I build things for the web.',
   'aboutMe':
-      'I’m a software engineer specializing in building full stack application. Currently I am Software Engineer @Finastra.',
+      'I’m a software engineer specializing in building full stack application. Currently I am working as Software Engineer @Finastra.',
   'aboutMeDetailed':
-      'Hello! My name is Akshay and I enjoy creating that live on internet.I started my  journey as developer in 2019. I started as Angular developer. \n \nToday I am working as full stack developer @Finastra. My main focus is to develop application which scales.Currently I am working on Angular as front-end and Java as backe-end technology.\n \nIn my free time I liked to make my hands dirty and explore new things in the technological market. I always put step forward to new technology currently I am learning flutter.',
+      'Hello! My name is Akshay and I enjoy creating that live on internet. I started my carrer as developer in 2019 as Frontend engineer. \n \nToday I am working as Full stack developer @Finastra. My main focus is to develop applications that scales.\n \nIn my free time I liked to explore new things in the technological market. I always put step forward to learn new technology, currently I am learning flutter.',
 };
 
 const contactMessage =
@@ -208,43 +208,56 @@ List<ExperienceModel> workExp = [
     workExperience: [
       'Working on so and so thing',
       'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
-      'Working on so and so thing',
     ],
   ),
   ExperienceModel(
-      designation: 'Software Engineer',
-      startDate: 'July 2019',
-      endDate: 'Feb 2021',
-      companyName: 'Persistent Systems',
-      companyLink: 'https://www.persistent.com/',
-      workExperience: [
-        'Working on so and so thing',
-        'Working on so and so thing',
-        'Working on so and so thing',
-        'Working on so and so thing',
-      ],
-      hasMultipleDesignation: true,
-      otherWorkExperience: [
-        ExperienceModel(
-          designation: 'Intern',
-          startDate: 'Jan 2019',
-          endDate: 'July 2021',
-          companyName: 'Persistent Systems',
-          companyLink: 'https://www.persistent.com/',
-          workExperience: [
-            'Working on so and so thing',
-            'Working on so and so thing',
-            'Working on so and so thing',
-            'Working on so and so thing',
-          ],
-        ),
-      ]),
+    designation: 'Software Engineer',
+    startDate: 'October 2020',
+    endDate: 'Feb 2021',
+    companyName: 'Persistent Systems',
+    companyLink: 'https://www.persistent.com/',
+    clientName: 'Robo Advisory Firm',
+    workExperience: [
+      'Intent is to provide client robust application through which client can add and invest money to achive their goals. Design architecture to integrate  trading platform which will increase clients revenue. Also creating fresh  platform for expreience user to directly invest in stocks.',
+      'Worked as backend developer.',
+      'Closely worked with architects and designed distributed system.',
+      'Created robust and secure API for providing security to financial transactions',
+      'Handled asyncronus flow of application and managing multiple transactions.',
+    ],
+    hasMultipleDesignation: true,
+    otherWorkExperience: [
+      ExperienceModel(
+        designation: 'Software Engineer',
+        startDate: 'June 2019',
+        endDate: 'Sept 2020',
+        companyName: 'Persistent Systems',
+        companyLink: 'https://www.persistent.com/',
+        hasMultipleDesignation: true,
+        clientName: 'Insurance Company',
+        workExperience: [
+          'The solution intends to provide the client with application which will provide end user a reliable solution for purchasing bonds. The bond products are a key revenue driver for Company. A primary objective is to significantly improve the mobile experience. Helps gain attention drasticaly incresing mobile user to purchase bonds on their finger tip.'
+          'Worked as UI developer.',
+          'Worked on under multiple teams.',
+          'Handled stage server deployment and other devops work.',
+          'Customer communication and team support.',
+        ],
+      ),
+      ExperienceModel(
+        designation: 'Intern',
+        startDate: 'Jan 2019',
+        endDate: 'June 2019',
+        companyName: 'Persistent Systems',
+        companyLink: 'https://www.persistent.com/',
+        hasMultipleDesignation: true,
+        workExperience: [
+          'Got training on Angular and Node.js.',
+          'Learned build robust and reusable component.',
+          'Learned basic skills how industry works.',
+          'Hands on experience on banking application.',
+        ],
+      ),
+    ],
+  ),
 ];
 
 List<GitProjectModel> gitProjectList = [
