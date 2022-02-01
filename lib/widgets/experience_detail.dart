@@ -38,28 +38,30 @@ class ExperienceDetail extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Flex(
-            direction: size.width > smallDesktopScreenMin
-                ? Axis.horizontal
-                : Axis.vertical,
-            crossAxisAlignment: size.width > smallDesktopScreenMin
-                ? CrossAxisAlignment.center
-                : CrossAxisAlignment.start,
-            children: [
-              AutoSizeText(experience.designation),
-              size.width > smallDesktopScreenMin
-                  ? const SizedBox(width: defaultSizing / 2)
-                  : const SizedBox(height: defaultSizing / 2),
-              AnimatedLink(
-                text: '@${experience.companyName}',
-                onTap: onCompanyNameClick,
-                disableHoverEffect: true,
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                      fontSize: 20,
-                    ),
-              )
-            ],
-          ),
+          if (experience.showDesignation) ...[
+            Flex(
+              direction: size.width > smallDesktopScreenMin
+                  ? Axis.horizontal
+                  : Axis.vertical,
+              crossAxisAlignment: size.width > smallDesktopScreenMin
+                  ? CrossAxisAlignment.center
+                  : CrossAxisAlignment.start,
+              children: [
+                AutoSizeText(experience.designation),
+                size.width > smallDesktopScreenMin
+                    ? const SizedBox(width: defaultSizing / 2)
+                    : const SizedBox(height: defaultSizing / 2),
+                AnimatedLink(
+                  text: '@${experience.companyName}',
+                  onTap: onCompanyNameClick,
+                  disableHoverEffect: true,
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        fontSize: 20,
+                      ),
+                )
+              ],
+            ),
+          ],
           if (experience.clientName != '') ...[
             const SizedBox(height: defaultSizing / 4),
             AutoSizeText(

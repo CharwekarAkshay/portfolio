@@ -25,21 +25,5 @@ class ExpeirenceDetailPoint extends StatelessWidget {
         ]
       )
     );
-
-    /*
-      return Container(
-      padding: const EdgeInsets.symmetric(vertical: defaultPadding / 5),
-      child: Row(
-        children: [
-          const Icon(
-            Icons.chevron_right,
-            color: themeColor,
-          ),
-          const SizedBox(width: defaultSizing / 2),
-          AutoSizeText(text)
-        ],
-      ),
-    );
-     */
   }
 }

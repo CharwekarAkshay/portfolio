@@ -9,6 +9,7 @@ class ExperienceModel {
 
   final bool hasMultipleDesignation;
   final List<ExperienceModel> otherWorkExperience;
+  final bool showDesignation;
 
   ExperienceModel({
     required this.designation,
@@ -20,5 +21,6 @@ class ExperienceModel {
     this.hasMultipleDesignation = false,
     this.otherWorkExperience = const [],
     this.clientName = '',
+    this.showDesignation = true,
   });
 }

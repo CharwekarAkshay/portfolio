@@ -206,8 +206,9 @@ List<ExperienceModel> workExp = [
     companyName: 'Finastra',
     companyLink: 'https://www.finastra.com/',
     workExperience: [
-      'Working on so and so thing',
-      'Working on so and so thing',
+      'Developed next gen UX portal for handling and managing corporate banking loans. Providing solution to multiple banks.',
+      'Worked as full stack developer in project. Created API\'s  using Spring boot and frontend completly built on Angular. Following angular\'s standard practice created generic application which can be molded according to needs.',
+      'Created different types of dasborad like silver, gold & plattinum for providing user enhanced experience and providing useful information at fingertip. Further used can customize each dashboards accoarding to there needs.'
     ],
   ),
   ExperienceModel(
@@ -234,9 +235,10 @@ List<ExperienceModel> workExp = [
         companyLink: 'https://www.persistent.com/',
         hasMultipleDesignation: true,
         clientName: 'Insurance Company',
+        showDesignation: false,
         workExperience: [
           'The solution intends to provide the client with application which will provide end user a reliable solution for purchasing bonds. The bond products are a key revenue driver for Company. A primary objective is to significantly improve the mobile experience. Helps gain attention drasticaly incresing mobile user to purchase bonds on their finger tip.'
-          'Worked as UI developer.',
+              'Worked as UI developer.',
           'Worked on under multiple teams.',
           'Handled stage server deployment and other devops work.',
           'Customer communication and team support.',
