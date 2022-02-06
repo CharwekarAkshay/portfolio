@@ -17,7 +17,8 @@ class Work extends StatelessWidget {
         children: [
           ContentHeader(link: link),
           const SizedBox(height: defaultSizing),
-          const AutoSizeText('Somethings that I worked on'),
+          const AutoSizeText(
+              'Some projects I have created in my free time for learning purpose. Still working on them will increase quality of applications.I am also on learning journey will try to add new projects.'),
           const SizedBox(height: defaultSizing),
           const WorkGridList()
         ],

@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/model.dart';
 
@@ -49,6 +50,17 @@ class _GitProjectState extends State<GitProject> with TickerProviderStateMixin {
     }
   }
 
+  void _handleClick(url) async {
+    if (!await launch(
+      url,
+      forceSafariVC: false,
+      forceWebView: true,
+      headers: <String, String>{'my_header_key': 'my_header_value'},
+    )) {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
@@ -65,7 +77,7 @@ class _GitProjectState extends State<GitProject> with TickerProviderStateMixin {
           );
         },
         child: InkWell(
-          onTap: () {},
+          onTap: () => _handleClick(widget.gitProject.gitLink),
           onHover: _handleHover,
           child: Card(
             elevation: _isHovered ? 23 : 1,

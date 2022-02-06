@@ -85,7 +85,7 @@ const double mobileScreenMax = 480.00;
 
 // Application Constant
 
-const defaultNoOfProjectDisplay = 5;
+const defaultNoOfProjectDisplay = 4;
 
 List<LinkModel> links = [
   LinkModel(
@@ -196,7 +196,7 @@ const information = {
 };
 
 const contactMessage =
-    'Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!';
+    'Always looking for any new opportunities, my inbox is always open. Feel free to connect with me and sahre ideas. It can be a beginning of something great!';
 
 List<ExperienceModel> workExp = [
   ExperienceModel(
@@ -264,89 +264,52 @@ List<ExperienceModel> workExp = [
 
 List<GitProjectModel> gitProjectList = [
   GitProjectModel(
-    name: 'Time Machine',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+    name: 'Portfolio',
+    description: 'My portfolio project build with the helo of flutter ',
+    gitLink: 'https://github.com/CharwekarAkshay/portfolio',
+    technologies: ['Dart', 'Flutter'],
   ),
   GitProjectModel(
-    name: 'Time Machine - 1',
+    name: 'Spring Angular',
     description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+        'Starter project for full stack application build with Angular and Java Spring boot. With basic configuration for quick start on practice project.',
+    gitLink: 'https://github.com/CharwekarAkshay/spring-angular',
+    technologies: ['Angular', 'Java'],
   ),
   GitProjectModel(
-    name: 'Time Machine - 2',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+    name: 'UI Components',
+    description: 'Basics responsive models which can be resued any where.',
+    gitLink: 'https://github.com/CharwekarAkshay/UIComponents',
+    technologies: ['HTML', 'CSS', 'SCSS', 'JavaScript'],
   ),
   GitProjectModel(
-    name: 'Time Machine - 3',
+    name: 'Node.js Starter',
     description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+        'Node.js project build for faster API development. Integrated winston logger. with help of express created simple API suits. ',
+    gitLink: 'https://github.com/CharwekarAkshay/node-js-starter',
+    technologies: ['Node.js', 'Express', 'JavaScript'],
   ),
   GitProjectModel(
-    name: 'Time Machine',
+    name: 'Java JWT',
     description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+        'Java application api which provide jwt based authentication. Application create JWT based on Self Signed certificates.',
+    gitLink:
+        'https://github.com/CharwekarAkshay/reddit-clone/tree/jwt-based-authentication',
+    technologies: ['Java', 'Spring', 'JWT'],
   ),
   GitProjectModel(
-    name: 'Time Machine - 1',
+    name: 'Netflix Clone',
     description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+        'Tried cloning netflix application. Build with the help of react and hosted on firebase.',
+    gitLink: 'https://github.com/CharwekarAkshay/netflix-clone',
+    technologies: ['React', 'JavaScript', 'Firebase'],
   ),
   GitProjectModel(
-    name: 'Time Machine - 2',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
+    name: 'Facebook Clone',
+    description: 'Tried creating facebook clone with the help of flutter.',
+    gitLink: 'https://github.com/CharwekarAkshay/facebook_clone',
+    technologies: ['Dart', 'Flutter'],
   ),
-  GitProjectModel(
-    name: 'Time Machine - 3',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
-  ),
-  GitProjectModel(
-    name: 'Time Machine',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
-  ),
-  GitProjectModel(
-    name: 'Time Machine - 1',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
-  ),
-  GitProjectModel(
-    name: 'Time Machine - 2',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
-  ),
-  GitProjectModel(
-    name: 'Time Machine - 3',
-    description:
-        'This is time machine project. Used to go back in time. And never comeback beacause this world is not good.',
-    gitLink: 'https://github.com/CharwekarAkshay',
-    technologies: ['Dart', 'Angular', 'Flutter', 'React'],
-  )
 ];
 
 // Files constants
